@@ -944,6 +944,11 @@ remote attestation procedures (RATS).<a href="#section-abstract-1" class="pilcro
 </li>
 <li class="toc ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="xref">4</a>.  <a href="#name-architectural-overview" class="xref">Architectural Overview</a><a href="#section-toc.1-1.4.1" class="pilcrow">¶</a></p>
+<ul class="toc ulEmpty">
+<li class="toc ulEmpty" id="section-toc.1-1.4.2.1">
+                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="xref">4.1</a>.  <a href="#name-composite-attester" class="xref">Composite Attester</a><a href="#section-toc.1-1.4.2.1.1" class="pilcrow">¶</a></p>
+</li>
+</ul>
 </li>
 <li class="toc ulEmpty" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="xref">5</a>.  <a href="#name-topological-models" class="xref">Topological Models</a><a href="#section-toc.1-1.5.1" class="pilcrow">¶</a></p>
@@ -1108,6 +1113,103 @@ via some other mechanism such as being configured in the Verifier by an administ
 Appraisal Policy to make application-specific decisions such as authorization decisions.
 The Attestation Result Appraisal Policy might, for example, be configured in the Relying Party 
 by an administrator.<a href="#section-4-5" class="pilcrow">¶</a></p>
+<div id="compositeattester">
+<section id="section-4.1">
+        <h3 id="name-composite-attester">
+<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-composite-attester" class="section-name selfRef">Composite Attester</a>
+        </h3>
+<p id="section-4.1-1">A Composite Attester is an entity composed of multiple sub-entities such that its
+trustworthiness has to be determined by evaluating all these sub-entities.
+Each sub-entity has at least one Attesting Environment collecting the claims 
+from at least one Target Environment, then this sub-entity generates Evidence
+about its trustworthiness. Therefore each sub-entity can be called an Attester.
+Among these Attesters, there may be only some, which can be called Lead Attesters,
+that have the communication functionality with the Verifier. Other Attesters
+don't have this ability, but they are connected to the Lead Attesters via internal
+links or network connections, and they are evaluated via the Lead Attester's help.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
+<p id="section-4.1-2">For example, a carrier-grade router is a composite device consisting of a chassis and multiple slots.
+The trustworthiness of the router depends on all its slots' trustworthiness.
+Each slot has an Attesting Environment such as a TPM or TEE collecting the
+claims of its boot process, then it generates Evidence from the claims to prove its trustworthiness.
+Among these slots, only a main slot can communicate with the Verifier
+while other slots cannot. But other slots can communicate with the main
+slot by the links between them inside the router. So the main slot collects
+the Evidence of other slots, produces the final Evidence of the whole router and
+conveys the final Evidence to the Verifier. Therefore the router is a Composite
+Attester, each slot is an Attester and the main slot is the Lead Attester.<a href="#section-4.1-2" class="pilcrow">¶</a></p>
+<p id="section-4.1-3">Another example is a multi-chassis router which is composed of multiple single carrier-grade routers.
+The multi-chassis router provides higher throughput by interconnecting
+multiple routers and simpler management by being logically treated as one router.
+Among these routers, there is only one main router that connects to the Verifier.
+Other routers are only connected to the main router by the network cables,
+and therefore they are managed and verified via this main router.
+So, in this case, the multi-chassis router is the Composite Attester,
+each router is an Attester and the main router is the Lead Attester.<a href="#section-4.1-3" class="pilcrow">¶</a></p>
+<p id="section-4.1-4"><a href="#composite" class="xref">Figure 2</a> depicts the data that flows between the Composite Attester and Verifier for the remote attestation.<a href="#section-4.1-4" class="pilcrow">¶</a></p>
+<span id="name-conceptual-data-flow-for-co"></span><div id="composite">
+<figure id="figure-2">
+          <div class="artwork art-text alignLeft" id="section-4.1-5.1">
+<pre>
+                   .-----------------------------.
+                   |           Verifier          |
+                   '-----------------------------'
+                                 |  ^
+           Endorsements and      |  | Evidence of
+           Appraisal Policy for  |  | Composite
+           Evidence of Attesters |  | Attester
+                                 |  |
+.--------------------------------|--|-------------------------------.
+|                                v  |                               |
+|  .--------------------------------------.                         |
+|  |                   .-------------.    |  Evidence of Attesters  |
+|  |                   | Attesting   |-.  | (via Internal Links or  |
+|  | Collecting +------| Environment | |  |  Network Connections)   |
+|  | Claims     |      '-------------' |  |    /                    |
+|  |            |        '-------------'  |   / .------------.      |
+|  |            v                         |  /  |            |      |
+|  |  .-------------.    ***************  |&lt;----| Attester B |-.    |
+|  |  | Target      |-.  * Verifying   *  |     '------------' |    |
+|  |  | Environment | |  * Environment *  |&lt;------| Attester C |-.  |
+|  |  '-------------' |  * (Optional)  *  |       '------------' |  |
+|  |    '-------------'  ***************  |&lt;--------| ......     |  |
+|  | Lead Attester A                      |         '------------'  |
+|  '--------------------------------------'                         |
+|                                                                   |
+|                       Composite Attester                          |
+'-------------------------------------------------------------------'
+</pre>
+</div>
+<figcaption><a href="#figure-2" class="selfRef">Figure 2</a>:
+<a href="#name-conceptual-data-flow-for-co" class="selfRef">Conceptual Data Flow for Composite Attester</a>
+          </figcaption></figure>
+</div>
+<p id="section-4.1-6">In the Composite Attester, each Attester generates its own Evidence by its
+Attesting Environments collecting the claims from its Target Environments.
+The Lead Attester collects the Evidence of all other Attesters and then
+generates the Evidence of the whole Composite Attester.<a href="#section-4.1-6" class="pilcrow">¶</a></p>
+<p id="section-4.1-7">Inside the Lead Attester, there may be an optional Verifying Environment.
+The Verifying Environment can verify the collected Evidence of other
+Attesters to evaluate their trustworthiness. Therefore, there are two
+situations when the Lead Attester generates the final Evidence.<a href="#section-4.1-7" class="pilcrow">¶</a></p>
+<p id="section-4.1-8">One situation is that the Lead Attester has no Verifying Environment.
+In this situation, the Lead Attester just collects the Evidence of other
+Attesters but doesn't verify them. It may just string all these Evidence
+into a whole one, or it may reorganize these Evidence with a new
+structure and sign this final Evidence. Then it conveys the final Evidence
+to the Verifier and the Verifier evaluates the Composite Attester's,
+including the Lead Attester's and other Attesters', trustworthiness.<a href="#section-4.1-8" class="pilcrow">¶</a></p>
+<p id="section-4.1-9">The other situation is that the Lead Attester has a Verifying Environment.
+After collecting the Evidence of other Attesters, the Lead Attester verifies these
+Evidence by using the Endorsements and Appraisal Policies, which are got from
+the Verifier or some reliable parties, for evaluating these Attesters' trustworthiness.
+Then the Lead Attester makes the verification results as claims which are the input
+to the final Evidence of the whole Composite Attester. Then the Lead Attester
+conveys the final Attestation Evidence to the Verifier on behalf of the Composite Attester.
+Before receiving the Endorsements and Appraisal Policies for other Attesters,
+to increase the security, the Lead Attester may first generate Evidence about
+its trustworthiness and convey this Evidence to the Verifier for evaluating.<a href="#section-4.1-9" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="overview">
@@ -1134,7 +1236,7 @@ constrain the serialization format of the Attestation Result. The
 format of the Evidence on the other hand is only constrained by the
 Attester-Verifier attestation protocol.<a href="#section-5.1-2" class="pilcrow">¶</a></p>
 <span id="name-passport-model-2"></span><div id="passport">
-<figure id="figure-2">
+<figure id="figure-3">
           <div class="artwork art-text alignLeft" id="section-5.1-3.1">
 <pre>
       +-------------+
@@ -1153,7 +1255,7 @@ Attester-Verifier attestation protocol.<a href="#section-5.1-2" class="pilcrow">
       +-------------+               +-------------+
 </pre>
 </div>
-<figcaption><a href="#figure-2" class="selfRef">Figure 2</a>:
+<figcaption><a href="#figure-3" class="selfRef">Figure 3</a>:
 <a href="#name-passport-model-2" class="selfRef">Passport Model</a>
           </figcaption></figure>
 </div>
@@ -1194,7 +1296,7 @@ Relying Party obtain an Attestation Result in the same serialization format allo
 minimizing the code footprint and attack surface area of the Relying Party, especially
 if the Relying Party is a constrained node.<a href="#section-5.2-3" class="pilcrow">¶</a></p>
 <span id="name-background-check-model-2"></span><div id="backgroundcheck">
-<figure id="figure-3">
+<figure id="figure-4">
           <div class="artwork art-text alignLeft" id="section-5.2-4.1">
 <pre>
                                  +-------------+
@@ -1213,7 +1315,7 @@ if the Relying Party is a constrained node.<a href="#section-5.2-3" class="pilcr
    +-------------+               +-------------+
 </pre>
 </div>
-<figcaption><a href="#figure-3" class="selfRef">Figure 3</a>:
+<figcaption><a href="#figure-4" class="selfRef">Figure 4</a>:
 <a href="#name-background-check-model-2" class="selfRef">Background-Check Model</a>
           </figcaption></figure>
 </div>
@@ -1238,14 +1340,14 @@ and the same device may need to attest to different Relying Parties for differen
 (e.g., a network infrastructure device to gain access to the network, and then a
 server holding confidential data to get access to that data).  As such, both models may
 simultaneously be in use by the same device.<a href="#section-5.3-2" class="pilcrow">¶</a></p>
-<p id="section-5.3-3"><a href="#combination" class="xref">Figure 4</a> shows another example of a combination where Relying Party 1 uses the 
+<p id="section-5.3-3"><a href="#combination" class="xref">Figure 5</a> shows another example of a combination where Relying Party 1 uses the 
 passport model, whereas Relying Party 2 uses an extension of the background-check model.
-Specifically, in addition to the basic functionality shown in <a href="#backgroundcheck" class="xref">Figure 3</a>, Relying Party 2 
+Specifically, in addition to the basic functionality shown in <a href="#backgroundcheck" class="xref">Figure 4</a>, Relying Party 2 
 actually provides the Attestation Result back to the Attester, allowing the Attester to
 use it with other Relying Parties.  This is the model that the Trusted Application Manager
 plans to support in the TEEP architecture <span>[<a href="#I-D.ietf-teep-architecture" class="xref">I-D.ietf-teep-architecture</a>]</span>.<a href="#section-5.3-3" class="pilcrow">¶</a></p>
 <span id="name-example-combination"></span><div id="combination">
-<figure id="figure-4">
+<figure id="figure-5">
           <div class="artwork art-text alignLeft" id="section-5.3-4.1">
 <pre>
       +-------------+
@@ -1273,7 +1375,7 @@ plans to support in the TEEP architecture <span>[<a href="#I-D.ietf-teep-archite
       +-------------+               +-------------+
 </pre>
 </div>
-<figcaption><a href="#figure-4" class="selfRef">Figure 4</a>:
+<figcaption><a href="#figure-5" class="selfRef">Figure 5</a>:
 <a href="#name-example-combination" class="selfRef">Example Combination</a>
           </figcaption></figure>
 </div>
@@ -1352,7 +1454,7 @@ draft-thaler-rats-architecture, and Role Messages content from draft-birkholz-ra
 </pre><a href="#section-8-1" class="pilcrow">¶</a>
 </div>
 <span id="name-multiple-attesters-and-rely"></span><div id="multievidence_diag">
-<figure id="figure-5">
+<figure id="figure-6">
         <div class="artwork art-text alignCenter art-MULTIEVIDENCE" id="section-8-2.1">
 <pre>
                     Evidence           Attestation Results
@@ -1374,7 +1476,7 @@ draft-thaler-rats-architecture, and Role Messages content from draft-birkholz-ra
     '--------------'                                `-------------------'
 </pre>
 </div>
-<figcaption><a href="#figure-5" class="selfRef">Figure 5</a>:
+<figcaption><a href="#figure-6" class="selfRef">Figure 6</a>:
 <a href="#name-multiple-attesters-and-rely" class="selfRef">Multiple Attesters and Relying Parties with Different Formats</a>
         </figcaption></figure>
 </div>
