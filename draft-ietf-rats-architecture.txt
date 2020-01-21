@@ -85,9 +85,9 @@ Table of Contents
      5.1.  Passport Model  . . . . . . . . . . . . . . . . . . . . .   7
      5.2.  Background-Check Model  . . . . . . . . . . . . . . . . .   8
      5.3.  Combinations  . . . . . . . . . . . . . . . . . . . . . .   9
-   6.  Two Types of Environments . . . . . . . . . . . . . . . . . .  10
+   6.  Two Types of Environments of an Attester  . . . . . . . . . .  10
    7.  Trust Model . . . . . . . . . . . . . . . . . . . . . . . . .  11
-   8.  Conceptual Messages . . . . . . . . . . . . . . . . . . . . .  12
+   8.  Conceptual Messages . . . . . . . . . . . . . . . . . . . . .  11
    9.  Freshness . . . . . . . . . . . . . . . . . . . . . . . . . .  12
    10. Privacy Considerations  . . . . . . . . . . . . . . . . . . .  12
    11. Security Considerations . . . . . . . . . . . . . . . . . . .  13
@@ -544,7 +544,7 @@ Internet-Draft              RATS Arch & Terms               January 2020
 
                        Figure 5: Example Combination
 
-6.  Two Types of Environments
+6.  Two Types of Environments of an Attester
 
    An Attester consists of at least one Attesting Environment and at
    least one Target Environment.  In some implementations, the Attesting
@@ -562,16 +562,14 @@ Birkholz, et al.          Expires 24 July 2020                 [Page 10]
 Internet-Draft              RATS Arch & Terms               January 2020
 
 
-   Target Environments are measured.  They provide the raw values and
-   the information to be represented in claims and ultimately expressed
-   as Evidence.
-
-   Attesting Environments conduct the measuring.  They collect the
-   claims, format them appropriately, and typically use key material and
-   cryptographic functions, such as signing or cipher algorithms, to
-   create Evidence.  Examples of environments that can be used as
-   Attesting Environments include Trusted Execution Environments (TEE),
-   embedded Secure Elements (eSE), or Hardware Security Modules (HSM).
+   Claims are collected from Target Environments.  That is, Attesting
+   Environments collect the raw values and the information to be
+   represented in claims.  Attesting Environments then format them
+   appropriately, and typically use key material and cryptographic
+   functions, such as signing or cipher algorithms, to create Evidence.
+   Examples of environments that can be used as Attesting Environments
+   include Trusted Execution Environments (TEE), embedded Secure
+   Elements (eSE), or Hardware Security Modules (HSM).
 
 7.  Trust Model
 
@@ -609,6 +607,8 @@ Internet-Draft              RATS Arch & Terms               January 2020
    tampering.  The component that is implicitly trusted is often
    referred to as a Root of Trust.
 
+8.  Conceptual Messages
+
 
 
 
@@ -617,8 +617,6 @@ Birkholz, et al.          Expires 24 July 2020                 [Page 11]
 
 Internet-Draft              RATS Arch & Terms               January 2020
 
-
-8.  Conceptual Messages
 
    <this section can include content from Serialization Formats and Conceptual Messages sections from
    draft-thaler-rats-architecture, and Role Messages content from draft-birkholz-rats-architecture>
@@ -662,6 +660,8 @@ Internet-Draft              RATS Arch & Terms               January 2020
    Protocols that convey Evidence or Attestation Results are responsible
    for detailing what kinds of information are disclosed, and to whom
    they are exposed.
+
+
 
 
 
