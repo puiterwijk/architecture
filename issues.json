@@ -1,6 +1,54 @@
 [
 
   {
+    "url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/20",
+    "repository_url": "https://api.github.com/repos/ietf-rats-wg/architecture",
+    "labels_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/20/labels{/name}",
+    "comments_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/20/comments",
+    "events_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/20/events",
+    "html_url": "https://github.com/ietf-rats-wg/architecture/issues/20",
+    "id": 552975979,
+    "node_id": "MDU6SXNzdWU1NTI5NzU5Nzk=",
+    "number": 20,
+    "title": "Target should be defined in terminology section",
+    "user": {
+      "login": "laurencelundblade",
+      "id": 7951515,
+      "node_id": "MDQ6VXNlcjc5NTE1MTU=",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/7951515?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/laurencelundblade",
+      "html_url": "https://github.com/laurencelundblade",
+      "followers_url": "https://api.github.com/users/laurencelundblade/followers",
+      "following_url": "https://api.github.com/users/laurencelundblade/following{/other_user}",
+      "gists_url": "https://api.github.com/users/laurencelundblade/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/laurencelundblade/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/laurencelundblade/subscriptions",
+      "organizations_url": "https://api.github.com/users/laurencelundblade/orgs",
+      "repos_url": "https://api.github.com/users/laurencelundblade/repos",
+      "events_url": "https://api.github.com/users/laurencelundblade/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/laurencelundblade/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2020-01-21T16:09:27Z",
+    "updated_at": "2020-01-21T16:09:27Z",
+    "closed_at": null,
+    "author_association": "NONE",
+    "body": ""
+  },
+  {
     "url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/19",
     "repository_url": "https://api.github.com/repos/ietf-rats-wg/architecture",
     "labels_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/19/labels{/name}",
@@ -36,14 +84,52 @@
     ],
     "state": "open",
     "locked": false,
-    "assignee": null,
+    "assignee": {
+      "login": "henkbirkholz",
+      "id": 12546130,
+      "node_id": "MDQ6VXNlcjEyNTQ2MTMw",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/12546130?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/henkbirkholz",
+      "html_url": "https://github.com/henkbirkholz",
+      "followers_url": "https://api.github.com/users/henkbirkholz/followers",
+      "following_url": "https://api.github.com/users/henkbirkholz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/henkbirkholz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/henkbirkholz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/henkbirkholz/subscriptions",
+      "organizations_url": "https://api.github.com/users/henkbirkholz/orgs",
+      "repos_url": "https://api.github.com/users/henkbirkholz/repos",
+      "events_url": "https://api.github.com/users/henkbirkholz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/henkbirkholz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
     "assignees": [
-
+      {
+        "login": "henkbirkholz",
+        "id": 12546130,
+        "node_id": "MDQ6VXNlcjEyNTQ2MTMw",
+        "avatar_url": "https://avatars3.githubusercontent.com/u/12546130?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/henkbirkholz",
+        "html_url": "https://github.com/henkbirkholz",
+        "followers_url": "https://api.github.com/users/henkbirkholz/followers",
+        "following_url": "https://api.github.com/users/henkbirkholz/following{/other_user}",
+        "gists_url": "https://api.github.com/users/henkbirkholz/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/henkbirkholz/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/henkbirkholz/subscriptions",
+        "organizations_url": "https://api.github.com/users/henkbirkholz/orgs",
+        "repos_url": "https://api.github.com/users/henkbirkholz/repos",
+        "events_url": "https://api.github.com/users/henkbirkholz/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/henkbirkholz/received_events",
+        "type": "User",
+        "site_admin": false
+      }
     ],
     "milestone": null,
-    "comments": 0,
+    "comments": 1,
     "created_at": "2020-01-21T08:11:38Z",
-    "updated_at": "2020-01-21T08:11:38Z",
+    "updated_at": "2020-01-23T22:08:45Z",
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "body": "Taking into account the recent trends in terminology used in draft text & PR, I am proposing to add Entity and Sub-Entity to the terminology section. We do not need to over-specify here. Hence, only mentioning Composite Device and Components as an examplew for each of the terms in the definition text could be enough.\r\n\r\nAre there any objections to this proposal? If not, we could create a PR and address it in next week's meeting."
@@ -89,9 +175,9 @@
 
     ],
     "milestone": null,
-    "comments": 0,
+    "comments": 1,
     "created_at": "2020-01-16T17:50:53Z",
-    "updated_at": "2020-01-16T17:50:53Z",
+    "updated_at": "2020-01-21T16:06:50Z",
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "body": ""
@@ -130,7 +216,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -139,8 +225,8 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2020-01-14T19:24:49Z",
-    "updated_at": "2020-01-14T21:23:45Z",
-    "closed_at": null,
+    "updated_at": "2020-01-22T23:09:05Z",
+    "closed_at": "2020-01-21T15:53:22Z",
     "author_association": "COLLABORATOR",
     "pull_request": {
       "url": "https://api.github.com/repos/ietf-rats-wg/architecture/pulls/17",
@@ -193,7 +279,7 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2020-01-14T02:32:35Z",
-    "updated_at": "2020-01-14T15:01:24Z",
+    "updated_at": "2020-01-21T16:06:56Z",
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "pull_request": {
@@ -330,7 +416,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": {
       "login": "nedmsmith",
@@ -397,8 +483,8 @@
     "milestone": null,
     "comments": 11,
     "created_at": "2020-01-07T15:38:06Z",
-    "updated_at": "2020-01-14T15:25:14Z",
-    "closed_at": null,
+    "updated_at": "2020-01-21T15:53:36Z",
+    "closed_at": "2020-01-21T15:53:36Z",
     "author_association": "COLLABORATOR",
     "body": "Ned suggests that the term Measure be added to connect the Attested Environment and Attesting Environment.  \r\nThere may be multiple Attested Environments that can measured by a single Attesting Environment (such as when there is a TPM, SGX, DICE).\r\n"
   },
@@ -436,7 +522,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -445,8 +531,8 @@
     "milestone": null,
     "comments": 2,
     "created_at": "2020-01-07T07:24:20Z",
-    "updated_at": "2020-01-21T11:48:17Z",
-    "closed_at": null,
+    "updated_at": "2020-01-21T15:40:18Z",
+    "closed_at": "2020-01-21T15:40:18Z",
     "author_association": "CONTRIBUTOR",
     "pull_request": {
       "url": "https://api.github.com/repos/ietf-rats-wg/architecture/pulls/13",
@@ -817,7 +903,7 @@
     "milestone": null,
     "comments": 7,
     "created_at": "2019-11-27T21:56:31Z",
-    "updated_at": "2020-01-08T21:47:39Z",
+    "updated_at": "2020-01-22T23:08:55Z",
     "closed_at": "2019-12-17T16:40:07Z",
     "author_association": "COLLABORATOR",
     "pull_request": {
@@ -979,7 +1065,7 @@
     "milestone": null,
     "comments": 3,
     "created_at": "2019-11-20T01:58:34Z",
-    "updated_at": "2019-12-03T15:56:05Z",
+    "updated_at": "2020-01-22T23:08:35Z",
     "closed_at": "2019-12-03T15:56:04Z",
     "author_association": "COLLABORATOR",
     "pull_request": {
