@@ -297,8 +297,8 @@ Internet-Draft              RATS Arch & Terms               January 2020
    |  |  |     Target     | |   Claims    |  |      '------------. |    |
    |  |  | Environment(s) | |  Collector  |<----------| Attester C |-.  |
    |  |  '----------------' |             |  |        '------------' |  |
-   |  |   Collecting ^      '-------------'<------------| ...        |  |
-   |  |       Claims |              ^        | Evidence '------------'  |
+   |  |   Collecting |      '-------------'<------------| ...        |  |
+   |  |       Claims v              ^        | Evidence '------------'  |
    |  |         .----------------.  |        |    of                    |
    |  |         |   Attesting    |--+        | Attesters                |
    |  |         | Environment(s) | Evidence  | (via Internal Links or   |
