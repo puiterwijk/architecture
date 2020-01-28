@@ -1,6 +1,60 @@
 [
 
   {
+    "url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/21",
+    "repository_url": "https://api.github.com/repos/ietf-rats-wg/architecture",
+    "labels_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/21/labels{/name}",
+    "comments_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/21/comments",
+    "events_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/21/events",
+    "html_url": "https://github.com/ietf-rats-wg/architecture/pull/21",
+    "id": 555867269,
+    "node_id": "MDExOlB1bGxSZXF1ZXN0MzY3NzMyMTMw",
+    "number": 21,
+    "title": "Changes to Composite Attester section based on design team discussion",
+    "user": {
+      "login": "dthaler",
+      "id": 6547784,
+      "node_id": "MDQ6VXNlcjY1NDc3ODQ=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6547784?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dthaler",
+      "html_url": "https://github.com/dthaler",
+      "followers_url": "https://api.github.com/users/dthaler/followers",
+      "following_url": "https://api.github.com/users/dthaler/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dthaler/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dthaler/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dthaler/subscriptions",
+      "organizations_url": "https://api.github.com/users/dthaler/orgs",
+      "repos_url": "https://api.github.com/users/dthaler/repos",
+      "events_url": "https://api.github.com/users/dthaler/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dthaler/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2020-01-27T22:17:36Z",
+    "updated_at": "2020-01-28T15:01:58Z",
+    "closed_at": null,
+    "author_association": "COLLABORATOR",
+    "pull_request": {
+      "url": "https://api.github.com/repos/ietf-rats-wg/architecture/pulls/21",
+      "html_url": "https://github.com/ietf-rats-wg/architecture/pull/21",
+      "diff_url": "https://github.com/ietf-rats-wg/architecture/pull/21.diff",
+      "patch_url": "https://github.com/ietf-rats-wg/architecture/pull/21.patch"
+    },
+    "body": "This attempts to address the remaining feedback on PR #13 on issues that were not fixed before it was merged.\r\n\r\nSigned-off-by: Dave Thaler <dthaler@microsoft.com>"
+  },
+  {
     "url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/20",
     "repository_url": "https://api.github.com/repos/ietf-rats-wg/architecture",
     "labels_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/20/labels{/name}",
@@ -225,7 +279,7 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2020-01-14T19:24:49Z",
-    "updated_at": "2020-01-22T23:09:05Z",
+    "updated_at": "2020-01-28T00:20:35Z",
     "closed_at": "2020-01-21T15:53:22Z",
     "author_association": "COLLABORATOR",
     "pull_request": {
@@ -279,7 +333,7 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2020-01-14T02:32:35Z",
-    "updated_at": "2020-01-21T16:06:56Z",
+    "updated_at": "2020-01-28T05:15:35Z",
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "pull_request": {
