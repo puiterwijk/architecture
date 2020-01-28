@@ -5,12 +5,12 @@
 RATS Working Group                                           H. Birkholz
 Internet-Draft                                            Fraunhofer SIT
 Intended status: Informational                                 D. Thaler
-Expires: 24 July 2020                                          Microsoft
+Expires: 31 July 2020                                          Microsoft
                                                            M. Richardson
                                                 Sandelman Software Works
                                                                 N. Smith
                                                                    Intel
-                                                         21 January 2020
+                                                         28 January 2020
 
 
                Remote Attestation Procedures Architecture
@@ -53,12 +53,12 @@ Status of This Memo
 
 
 
-Birkholz, et al.          Expires 24 July 2020                  [Page 1]
+Birkholz, et al.          Expires 31 July 2020                  [Page 1]
 
 Internet-Draft              RATS Arch & Terms               January 2020
 
 
-   This Internet-Draft will expire on 24 July 2020.
+   This Internet-Draft will expire on 31 July 2020.
 
 Copyright Notice
 
@@ -90,12 +90,12 @@ Table of Contents
    8.  Conceptual Messages . . . . . . . . . . . . . . . . . . . . .  11
    9.  Freshness . . . . . . . . . . . . . . . . . . . . . . . . . .  12
    10. Privacy Considerations  . . . . . . . . . . . . . . . . . . .  12
-   11. Security Considerations . . . . . . . . . . . . . . . . . . .  13
+   11. Security Considerations . . . . . . . . . . . . . . . . . . .  12
    12. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  13
    13. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  13
    14. Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  13
    15. Informative References  . . . . . . . . . . . . . . . . . . .  13
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  14
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  13
 
 1.  Introduction
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Birkholz, et al.          Expires 24 July 2020                  [Page 2]
+Birkholz, et al.          Expires 31 July 2020                  [Page 2]
 
 Internet-Draft              RATS Arch & Terms               January 2020
 
@@ -165,7 +165,7 @@ Internet-Draft              RATS Arch & Terms               January 2020
 
 
 
-Birkholz, et al.          Expires 24 July 2020                  [Page 3]
+Birkholz, et al.          Expires 31 July 2020                  [Page 3]
 
 Internet-Draft              RATS Arch & Terms               January 2020
 
@@ -221,7 +221,7 @@ Internet-Draft              RATS Arch & Terms               January 2020
 
 
 
-Birkholz, et al.          Expires 24 July 2020                  [Page 4]
+Birkholz, et al.          Expires 31 July 2020                  [Page 4]
 
 Internet-Draft              RATS Arch & Terms               January 2020
 
@@ -241,119 +241,107 @@ Internet-Draft              RATS Arch & Terms               January 2020
    Environment, then this sub-entity generates Evidence about its
    trustworthiness.  Therefore each sub-entity can be called an
    Attester.  Among these Attesters, there may be only some, which can
-   be called Lead Attesters, that have the communication functionality
-   with the Verifier.  Other Attesters don't have this ability, but they
-   are connected to the Lead Attesters via internal links or network
+   be called Lead Attesters, that have the ability to communicate with
+   the Verifier.  Other Attesters don't have this ability, but they are
+   connected to the Lead Attesters via internal links or network
    connections, and they are evaluated via the Lead Attester's help.
 
    For example, a carrier-grade router is a composite device consisting
    of a chassis and multiple slots.  The trustworthiness of the router
    depends on all its slots' trustworthiness.  Each slot has an
    Attesting Environment such as a TPM or TEE collecting the claims of
-   its boot process, then it generates Evidence from the claims to prove
-   its trustworthiness.  Among these slots, only a main slot can
-   communicate with the Verifier while other slots cannot.  But other
-   slots can communicate with the main slot by the links between them
-   inside the router.  So the main slot collects the Evidence of other
-   slots, produces the final Evidence of the whole router and conveys
-   the final Evidence to the Verifier.  Therefore the router is a
-   Composite Attester, each slot is an Attester and the main slot is the
-   Lead Attester.
+   its boot process, after which it generates Evidence from the claims.
+   Among these slots, only a main slot can communicate with the Verifier
+   while other slots cannot.  But other slots can communicate with the
+   main slot by the links between them inside the router.  So the main
+   slot collects the Evidence of other slots, produces the final
+   Evidence of the whole router and conveys the final Evidence to the
+   Verifier.  Therefore the router is a Composite Attester, each slot is
+   an Attester, and the main slot is the Lead Attester.
 
-   Another example is a multi-chassis router which is composed of
-   multiple single carrier-grade routers.  The multi-chassis router
-   provides higher throughput by interconnecting multiple routers and
-   simpler management by being logically treated as one router.  Among
-   these routers, there is only one main router that connects to the
-   Verifier.  Other routers are only connected to the main router by the
-   network cables, and therefore they are managed and verified via this
-   main router.  So, in this case, the multi-chassis router is the
-   Composite Attester, each router is an Attester and the main router is
-   the Lead Attester.
+   Another example is a multi-chassis router composed of multiple single
+   carrier-grade routers.  The multi-chassis router provides higher
+   throughput by interconnecting multiple routers and simpler management
+   by being logically treated as one router.  Among these routers, there
+   is only one main router that connects to the Verifier.  Other routers
+   are only connected to the main router by the network cables, and
+   therefore they are managed and verified via this main router.  So, in
+   this case, the multi-chassis router is the Composite Attester, each
+   router is an Attester and the main router is the Lead Attester.
 
-   Figure 2 depicts the data that flows between the Composite Attester
-   and Verifier for the remote attestation.
+   Figure 2 depicts the conceptual data flow for a Composite Attester.
 
 
 
 
-Birkholz, et al.          Expires 24 July 2020                  [Page 5]
+
+
+
+Birkholz, et al.          Expires 31 July 2020                  [Page 5]
 
 Internet-Draft              RATS Arch & Terms               January 2020
 
 
-                      .-----------------------------.
-                      |           Verifier          |
-                      '-----------------------------'
-                                    |  ^
-              Endorsements and      |  | Evidence of
-              Appraisal Policy for  |  | Composite
-              Evidence of Attesters |  | Attester
-                                    |  |
-   .--------------------------------|--|-------------------------------.
-   |                                v  |                               |
-   |  .--------------------------------------.                         |
-   |  |                   .-------------.    |  Evidence of Attesters  |
-   |  |                   | Attesting   |-.  | (via Internal Links or  |
-   |  | Collecting +------| Environment | |  |  Network Connections)   |
-   |  | Claims     |      '-------------' |  |    /                    |
-   |  |            |        '-------------'  |   / .------------.      |
-   |  |            v                         |  /  |            |      |
-   |  |  .-------------.    ***************  |<----| Attester B |-.    |
-   |  |  | Target      |-.  * Verifying   *  |     '------------' |    |
-   |  |  | Environment | |  * Environment *  |<------| Attester C |-.  |
-   |  |  '-------------' |  * (Optional)  *  |       '------------' |  |
-   |  |    '-------------'  ***************  |<--------| ......     |  |
-   |  | Lead Attester A                      |         '------------'  |
-   |  '--------------------------------------'                         |
-   |                                                                   |
-   |                       Composite Attester                          |
-   '-------------------------------------------------------------------'
+                       .-----------------------------.
+                       |           Verifier          |
+                       '-----------------------------'
+                                       ^
+                                       | Evidence of
+                                       | Composite
+                                       | Attester
+                                       |
+   .-----------------------------------|--------------------------------.
+   |  .--------------------------------|-----.      .------------.      |
+   |  |                                |     |      |            |      |
+   |  |  .----------------. .-------------.<--------| Attester B |-.    |
+   |  |  |     Target     | |   Claims    |  |      '------------. |    |
+   |  |  | Environment(s) | |  Collector  |<----------| Attester C |-.  |
+   |  |  '----------------' |             |  |        '------------' |  |
+   |  |   Collecting ^      '-------------'<------------| ...        |  |
+   |  |       Claims |              ^        | Evidence '------------'  |
+   |  |         .----------------.  |        |    of                    |
+   |  |         |   Attesting    |--+        | Attesters                |
+   |  |         | Environment(s) | Evidence  | (via Internal Links or   |
+   |  |         '----------------' of Lead   | Network Connections)     |
+   |  |                            Attester  |                          |
+   |  | Lead Attester A                      |                          |
+   |  '--------------------------------------'                          |
+   |                                                                    |
+   |                       Composite Attester                           |
+   '--------------------------------------------------------------------'
 
-           Figure 2: Conceptual Data Flow for Composite Attester
+          Figure 2: Conceptual Data Flow for a Composite Attester
 
    In the Composite Attester, each Attester generates its own Evidence
-   by its Attesting Environments collecting the claims from its Target
-   Environments.  The Lead Attester collects the Evidence of all other
+   by its Attesting Environment(s) collecting the claims from its Target
+   Environment(s).  The Lead Attester collects the Evidence of all other
    Attesters and then generates the Evidence of the whole Composite
    Attester.
 
-   Inside the Lead Attester, there may be an optional Verifying
-   Environment.  The Verifying Environment can verify the collected
-   Evidence of other Attesters to evaluate their trustworthiness.
-   Therefore, there are two situations when the Lead Attester generates
-   the final Evidence.
+   The Lead Attester's Claims Collector may or may not include its own
+   Verifier.  One situation is that the Claims Collector has no internal
+   Verifier.  In this situation, the Claims Collecctor simply combines
+   the various Evidences into the final Evidence that is sent off to the
+   remote Verifier, which evaluates the Composite Attester's, including
+   the Lead Attester's and other Attesters', trustworthiness.
 
-   One situation is that the Lead Attester has no Verifying Environment.
-   In this situation, the Lead Attester just collects the Evidence of
-   other Attesters but doesn't verify them.  It may just string all
-   these Evidence into a whole one, or it may reorganize these Evidence
-   with a new structure and sign this final Evidence.  Then it conveys
-   the final Evidence to the Verifier and the Verifier evaluates the
+   The other situation is that the Lead Attester's Claims Collector has
+   an internal Verifier.  After collecting the Evidence of other
+   Attesters, the Claims Collector verifies them using Endorsements and
+   Appraisal Policies (obtained the same way as any other Verifier), for
+   evaluating these Attesters' trustworthiness.  Then the Claims
 
 
 
-Birkholz, et al.          Expires 24 July 2020                  [Page 6]
+Birkholz, et al.          Expires 31 July 2020                  [Page 6]
 
 Internet-Draft              RATS Arch & Terms               January 2020
 
 
-   Composite Attester's, including the Lead Attester's and other
-   Attesters', trustworthiness.
-
-   The other situation is that the Lead Attester has a Verifying
-   Environment.  After collecting the Evidence of other Attesters, the
-   Lead Attester verifies these Evidence by using the Endorsements and
-   Appraisal Policies, which are got from the Verifier or some reliable
-   parties, for evaluating these Attesters' trustworthiness.  Then the
-   Lead Attester makes the verification results as claims which are the
-   input to the final Evidence of the whole Composite Attester.  Then
-   the Lead Attester conveys the final Attestation Evidence to the
-   Verifier on behalf of the Composite Attester.  Before receiving the
-   Endorsements and Appraisal Policies for other Attesters, to increase
-   the security, the Lead Attester may first generate Evidence about its
-   trustworthiness and convey this Evidence to the Verifier for
-   evaluating.
+   Collector combines the Attestation Results into the final Evidence of
+   the whole Composite Attester which is sent off to the remote
+   Verifier, which might treat the claims obtained from the local
+   Attestation Results as if they were Evidence.
 
 5.  Topological Models
 
@@ -377,23 +365,6 @@ Internet-Draft              RATS Arch & Terms               January 2020
    Result.  The format of the Evidence on the other hand is only
    constrained by the Attester-Verifier attestation protocol.
 
-
-
-
-
-
-
-
-
-
-
-
-
-Birkholz, et al.          Expires 24 July 2020                  [Page 7]
-
-Internet-Draft              RATS Arch & Terms               January 2020
-
-
          +-------------+
          |             | Compare Evidence
          |   Verifier  | against Appraisal Policy
@@ -415,6 +386,14 @@ Internet-Draft              RATS Arch & Terms               January 2020
    nations issue passports to their citizens.  The nature of the
    Evidence that an individual needs to provide to its local authority
    is specific to the country involved.  The citizen retains control of
+
+
+
+Birkholz, et al.          Expires 31 July 2020                  [Page 7]
+
+Internet-Draft              RATS Arch & Terms               January 2020
+
+
    the resulting passport document and presents it to other entities
    when it needs to assert a citizenship or identity claim, such as an
    airport immigration desk.  The passport is considered sufficient
@@ -442,14 +421,6 @@ Internet-Draft              RATS Arch & Terms               January 2020
 
    However, like in the Passport model, an Attestation Result is still
    consumed by the Relying Party and so the serialization format of the
-
-
-
-Birkholz, et al.          Expires 24 July 2020                  [Page 8]
-
-Internet-Draft              RATS Arch & Terms               January 2020
-
-
    Attestation Result is still important.  If the Relying Party is a
    constrained node whose purpose is to serve a given type resource
    using a standard resource access protocol, it already needs the
@@ -458,6 +429,26 @@ Internet-Draft              RATS Arch & Terms               January 2020
    serialization format allows minimizing the code footprint and attack
    surface area of the Relying Party, especially if the Relying Party is
    a constrained node.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Birkholz, et al.          Expires 31 July 2020                  [Page 8]
+
+Internet-Draft              RATS Arch & Terms               January 2020
+
 
                                     +-------------+
                                     |             | Compare Evidence
@@ -497,15 +488,6 @@ Internet-Draft              RATS Arch & Terms               January 2020
    up to the Relying Party, and the same device may need to attest to
    different Relying Parties for different use cases (e.g., a network
    infrastructure device to gain access to the network, and then a
-
-
-
-
-Birkholz, et al.          Expires 24 July 2020                  [Page 9]
-
-Internet-Draft              RATS Arch & Terms               January 2020
-
-
    server holding confidential data to get access to that data).  As
    such, both models may simultaneously be in use by the same device.
 
@@ -515,6 +497,15 @@ Internet-Draft              RATS Arch & Terms               January 2020
    functionality shown in Figure 4, Relying Party 2 actually provides
    the Attestation Result back to the Attester, allowing the Attester to
    use it with other Relying Parties.  This is the model that the
+
+
+
+
+Birkholz, et al.          Expires 31 July 2020                  [Page 9]
+
+Internet-Draft              RATS Arch & Terms               January 2020
+
+
    Trusted Application Manager plans to support in the TEEP architecture
    [I-D.ietf-teep-architecture].
 
@@ -554,14 +545,6 @@ Internet-Draft              RATS Arch & Terms               January 2020
    and application) where a Target Environment is the Attesting
    Environment for the next environment in the boot sequence.
 
-
-
-
-Birkholz, et al.          Expires 24 July 2020                 [Page 10]
-
-Internet-Draft              RATS Arch & Terms               January 2020
-
-
    Claims are collected from Target Environments.  That is, Attesting
    Environments collect the raw values and the information to be
    represented in claims.  Attesting Environments then format them
@@ -570,6 +553,14 @@ Internet-Draft              RATS Arch & Terms               January 2020
    Examples of environments that can be used as Attesting Environments
    include Trusted Execution Environments (TEE), embedded Secure
    Elements (eSE), or Hardware Security Modules (HSM).
+
+
+
+
+Birkholz, et al.          Expires 31 July 2020                 [Page 10]
+
+Internet-Draft              RATS Arch & Terms               January 2020
+
 
 7.  Trust Model
 
@@ -609,17 +600,23 @@ Internet-Draft              RATS Arch & Terms               January 2020
 
 8.  Conceptual Messages
 
+   <this section can include content from Serialization Formats and Conceptual Messages sections from
+   draft-thaler-rats-architecture, and Role Messages content from draft-birkholz-rats-architecture>
 
 
 
 
-Birkholz, et al.          Expires 24 July 2020                 [Page 11]
+
+
+
+
+
+
+
+Birkholz, et al.          Expires 31 July 2020                 [Page 11]
 
 Internet-Draft              RATS Arch & Terms               January 2020
 
-
-   <this section can include content from Serialization Formats and Conceptual Messages sections from
-   draft-thaler-rats-architecture, and Role Messages content from draft-birkholz-rats-architecture>
 
                        Evidence           Attestation Results
 
@@ -661,19 +658,6 @@ Internet-Draft              RATS Arch & Terms               January 2020
    for detailing what kinds of information are disclosed, and to whom
    they are exposed.
 
-
-
-
-
-
-
-
-
-Birkholz, et al.          Expires 24 July 2020                 [Page 12]
-
-Internet-Draft              RATS Arch & Terms               January 2020
-
-
 11.  Security Considerations
 
    Any solution that conveys information used for security purposes,
@@ -682,6 +666,14 @@ Internet-Draft              RATS Arch & Terms               January 2020
    to-end integrity protection and replay attack prevention, and often
    also needs to support additional security protections.  For example,
    additional means of authentication, confidentiality, integrity,
+
+
+
+Birkholz, et al.          Expires 31 July 2020                 [Page 12]
+
+Internet-Draft              RATS Arch & Terms               January 2020
+
+
    replay, denial of service and privacy protection are needed in many
    use cases.
 
@@ -722,14 +714,6 @@ Internet-Draft              RATS Arch & Terms               January 2020
               Pei, M., Tschofenig, H., Thaler, D., and D. Wheeler,
               "Trusted Execution Environment Provisioning (TEEP)
               Architecture", Work in Progress, Internet-Draft, draft-
-
-
-
-Birkholz, et al.          Expires 24 July 2020                 [Page 13]
-
-Internet-Draft              RATS Arch & Terms               January 2020
-
-
               ietf-teep-architecture-05, 12 December 2019,
               <http://www.ietf.org/internet-drafts/draft-ietf-teep-
               architecture-05.txt>.
@@ -738,6 +722,14 @@ Authors' Addresses
 
    Henk Birkholz
    Fraunhofer SIT
+
+
+
+Birkholz, et al.          Expires 31 July 2020                 [Page 13]
+
+Internet-Draft              RATS Arch & Terms               January 2020
+
+
    Rheinstrasse 75
    64295 Darmstadt
    Germany
@@ -781,4 +773,12 @@ Authors' Addresses
 
 
 
-Birkholz, et al.          Expires 24 July 2020                 [Page 14]
+
+
+
+
+
+
+
+
+Birkholz, et al.          Expires 31 July 2020                 [Page 14]
