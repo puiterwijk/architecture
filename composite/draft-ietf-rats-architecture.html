@@ -1111,7 +1111,7 @@ might be obtained from an Endorser along with the Endorsements, or might be obta
 via some other mechanism such as being configured in the Verifier by an administrator.<a href="#section-4-4" class="pilcrow">¶</a></p>
 <p id="section-4-5">The Relying Party uses Attestation Results by applying its own
 Appraisal Policy to make application-specific decisions such as authorization decisions.
-The Attestation Result Appraisal Policy might, for example, be configured in the Relying Party 
+The Attestation Result Appraisal Policy might, for example, be configured in the Relying Party
 by an administrator.<a href="#section-4-5" class="pilcrow">¶</a></p>
 <div id="compositeattester">
 <section id="section-4.1">
@@ -1120,7 +1120,7 @@ by an administrator.<a href="#section-4-5" class="pilcrow">¶</a></p>
         </h3>
 <p id="section-4.1-1">A Composite Attester is an entity composed of multiple sub-entities such that its
 trustworthiness has to be determined by evaluating all these sub-entities.
-Each sub-entity has at least one Attesting Environment collecting the claims 
+Each sub-entity has at least one Attesting Environment collecting the claims
 from at least one Target Environment, then this sub-entity generates Evidence
 about its trustworthiness. Therefore each sub-entity can be called an Attester.
 Among these Attesters, there may be only some, which can be called Lead Attesters,
@@ -1187,17 +1187,18 @@ each router is an Attester and the main router is the Lead Attester.<a href="#se
 Attesting Environment(s) collecting the claims from its Target Environment(s).
 The Lead Attester collects the Evidence of all other Attesters and then
 generates the Evidence of the whole Composite Attester.<a href="#section-4.1-6" class="pilcrow">¶</a></p>
-<p id="section-4.1-7">The Lead Attester's Claims Collector may or may not include its own
-Verifier. One situation is that the Claims Collector has no internal Verifier.
-In this situation, the Claims Collecctor simply combines the various
+<p id="section-4.1-7">The Lead Attester's Attesting Environment may or may not include its own
+Verifier.
+One situation is that the Claims Collector has no internal Verifier.
+In this situation, the Lead Attesting Environment simply combines the various
 Evidences into the final Evidence that is sent off to the remote Verifier,
 which evaluates the Composite Attester's,
 including the Lead Attester's and other Attesters', trustworthiness.<a href="#section-4.1-7" class="pilcrow">¶</a></p>
-<p id="section-4.1-8">The other situation is that the Lead Attester's Claims Collector has an internal Verifier.
-After collecting the Evidence of other Attesters, the Claims Collector verifies them
-using Endorsements and Appraisal Policies (obtained the
+<p id="section-4.1-8">The other situation is that the Lead Attesting Environment has an internal Verifier.
+After collecting the Evidence of other Attesters, this Attesting Environment
+verifies them using Endorsements and Appraisal Policies (obtained the
 same way as any other Verifier), for evaluating these Attesters' trustworthiness.
-Then the Claims Collector combines the Attestation Results into
+Then the Lead Attesting Environment combines the Attestation Results into
 the final Evidence of the whole Composite Attester which is sent off to the remote
 Verifier, which might treat the claims obtained from the local Attestation Results
 as if they were Evidence.<a href="#section-4.1-8" class="pilcrow">¶</a></p>
