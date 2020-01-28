@@ -1160,18 +1160,18 @@ each router is an Attester and the main router is the Lead Attester.<a href="#se
                                     |
 .-----------------------------------|--------------------------------.
 |  .--------------------------------|-----.      .------------.      |
-|  |                                |     |      |            |      |
-|  |  .----------------. .-------------.&lt;--------| Attester B |-.    |
-|  |  |     Target     | |   Claims    |  |      '------------. |    |
-|  |  | Environment(s) | |  Collector  |&lt;----------| Attester C |-.  |
-|  |  '----------------' |             |  |        '------------' |  |
-|  |   Collecting |      '-------------'&lt;------------| ...        |  |
-|  |       Claims v              ^        | Evidence '------------'  |
-|  |         .----------------.  |        |    of                    |
-|  |         |   Attesting    |--+        | Attesters                |
-|  |         | Environment(s) | Evidence  | (via Internal Links or   |
-|  |         '----------------' of Lead   | Network Connections)     |
-|  |                            Attester  |                          |
+|  |                      .------------.  |      |            |      |
+|  |  .----------------.  |  Attesting |&lt;--------| Attester B |-.    |
+|  |  |     Target     |  |Environment |  |      '------------. |    |
+|  |  | Environment(s) |  |            |&lt;----------| Attester C |-.  |
+|  |  |                |  |            |  |        '------------' |  |
+|  |  |                |  |            |&lt;------------| ...        |  |
+|  |  |                |  '------------'  | Evidence '------------'  |
+|  |  |                |            ^     |    of                    |
+|  |  |                |------------/     | Attesters                |
+|  |  '----------------'  Collecting      | (via Internal Links or   |
+|  |                      Claims          | Network Connections)     |
+|  |                                      |                          |
 |  | Lead Attester A                      |                          |
 |  '--------------------------------------'                          |
 |                                                                    |

@@ -292,18 +292,18 @@ Internet-Draft              RATS Arch & Terms               January 2020
                                        |
    .-----------------------------------|--------------------------------.
    |  .--------------------------------|-----.      .------------.      |
-   |  |                                |     |      |            |      |
-   |  |  .----------------. .-------------.<--------| Attester B |-.    |
-   |  |  |     Target     | |   Claims    |  |      '------------. |    |
-   |  |  | Environment(s) | |  Collector  |<----------| Attester C |-.  |
-   |  |  '----------------' |             |  |        '------------' |  |
-   |  |   Collecting |      '-------------'<------------| ...        |  |
-   |  |       Claims v              ^        | Evidence '------------'  |
-   |  |         .----------------.  |        |    of                    |
-   |  |         |   Attesting    |--+        | Attesters                |
-   |  |         | Environment(s) | Evidence  | (via Internal Links or   |
-   |  |         '----------------' of Lead   | Network Connections)     |
-   |  |                            Attester  |                          |
+   |  |                      .------------.  |      |            |      |
+   |  |  .----------------.  |  Attesting |<--------| Attester B |-.    |
+   |  |  |     Target     |  |Environment |  |      '------------. |    |
+   |  |  | Environment(s) |  |            |<----------| Attester C |-.  |
+   |  |  |                |  |            |  |        '------------' |  |
+   |  |  |                |  |            |<------------| ...        |  |
+   |  |  |                |  '------------'  | Evidence '------------'  |
+   |  |  |                |            ^     |    of                    |
+   |  |  |                |------------/     | Attesters                |
+   |  |  '----------------'  Collecting      | (via Internal Links or   |
+   |  |                      Claims          | Network Connections)     |
+   |  |                                      |                          |
    |  | Lead Attester A                      |                          |
    |  '--------------------------------------'                          |
    |                                                                    |
