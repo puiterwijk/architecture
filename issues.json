@@ -143,9 +143,9 @@
 
     ],
     "milestone": null,
-    "comments": 0,
+    "comments": 1,
     "created_at": "2020-01-28T15:54:40Z",
-    "updated_at": "2020-01-28T15:55:20Z",
+    "updated_at": "2020-02-03T09:11:14Z",
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "body": "\"(via Internal Links or Network Connections)\" is ambiguous.\r\n\r\nIs it Internal (Links or Network Connections) or\r\n(Internal Links) or (Network Connections)\r\n"
