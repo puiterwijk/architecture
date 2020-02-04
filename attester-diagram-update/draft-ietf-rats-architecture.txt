@@ -307,7 +307,7 @@ Internet-Draft              RATS Arch & Terms              February 2020
    | | Lead Attester A                      |                         |
    | '--------------------------------------'                         |
    |                                                                  |
-   |                           Device                                 |
+   |                    Device/Composite Device/Attester/TBD #33      |
    '------------------------------------------------------------------'
 
           Figure 2: Conceptual Data Flow for a Composite Attester
