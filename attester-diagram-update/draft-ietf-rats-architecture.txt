@@ -527,11 +527,11 @@ Internet-Draft              RATS Arch & Terms              February 2020
       Evidence|    |Attestation
               |    |  Result
               |    v
-         +-------------+               +-------------+
-         |             |-------------->|             | Compare Attestation
-         |   Attester  |  Attestation  |   Relying   | Result against
-         |             |     Result    |   Party 1   | Appraisal Policy
-         +-------------+               +-------------+
+         +----------+               +----------+
+         |          |-------------->|          | Compare Attestation
+         | Attester |  Attestation  |  Relying | Result against
+         |          |     Result    |  Party 1 | Appraisal Policy
+         +----------+               +----------+
 
                        Figure 5: Example Combination
 
