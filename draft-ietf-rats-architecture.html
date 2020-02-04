@@ -1164,33 +1164,33 @@ each router is an Attester and the main router is the Lead Attester.<a href="#se
 <figure id="figure-2">
           <div class="artwork art-text alignLeft" id="section-4.1-5.1">
 <pre>
-                    .-----------------------------.
-                    |           Verifier          |
-                    '-----------------------------'
-                                    ^
-                                    | Evidence of
-                                    | Composite
-                                    | Attester
-                                    |
-.-----------------------------------|--------------------------------.
-|  .--------------------------------|-----.      .------------.      |
-|  |                      .------------.  |      |            |      |
-|  |                      |  Attesting |&lt;--------| Attester B |-.    |
-|  |                      |Environment |  |      '------------. |    |
-|  |  .----------------.  |            |&lt;----------| Attester C |-.  |
-|  |  |     Target     |  |            |  |        '------------' |  |
-|  |  | Environment(s) |  |            |&lt;------------| ...        |  |
-|  |  |                |  '------------'  | Evidence '------------'  |
-|  |  |                |            ^     |    of                    |
-|  |  |                |------------/     | Attesters                |
-|  |  '----------------'  Collecting      | (via Internal Links or   |
-|  |                      Claims          | Network Connections)     |
-|  |                                      |                          |
-|  | Lead Attester A                      |                          |
-|  '--------------------------------------'                          |
-|                                                                    |
-|                       Composite Attester                           |
-'--------------------------------------------------------------------'
+                   .-----------------------------.
+                   |           Verifier          |
+                   '-----------------------------'
+                                   ^
+                                   |
+                                   | Composite
+                                   | Evidence
+                                   |
+.----------------------------------|-------------------------------.
+| .--------------------------------|-----.      .------------.     |
+| |                      .------------.  |      |            |     |
+| |                      |  Attesting |&lt;--------| Attester B |-.   |
+| |                      |Environment |  |      '------------. |   |
+| |  .----------------.  |            |&lt;----------| Attester C |-. |
+| |  |     Target     |  |            |  |        '------------' | |
+| |  | Environment(s) |  |            |&lt;------------| ...        | |
+| |  |                |  '------------'  | Evidence '------------' |
+| |  |                |            ^     |    of                   |
+| |  |                |------------/     | Attesters               |
+| |  '----------------'  Collecting      | (via Internal Links or  |
+| |                      Claims          | Network Connections)    |
+| |                                      |                         |
+| | Lead Attester A                      |                         |
+| '--------------------------------------'                         |
+|                                                                  |
+|                    Device/Composite Device/Attester/TBD #33      |
+'------------------------------------------------------------------'
 </pre>
 </div>
 <figcaption><a href="#figure-2" class="selfRef">Figure 2</a>:
@@ -1376,11 +1376,11 @@ plans to support in the TEEP architecture <span>[<a href="#I-D.ietf-teep-archite
    Evidence|    |Attestation
            |    |  Result
            |    v
-      +-------------+               +-------------+
-      |             |--------------&gt;|             | Compare Attestation
-      |   Attester  |  Attestation  |   Relying   | Result against
-      |             |     Result    |   Party 1   | Appraisal Policy
-      +-------------+               +-------------+
+      +----------+               +----------+
+      |          |--------------&gt;|          | Compare Attestation
+      | Attester |  Attestation  |  Relying | Result against
+      |          |     Result    |  Party 1 | Appraisal Policy
+      +----------+               +----------+
 </pre>
 </div>
 <figcaption><a href="#figure-5" class="selfRef">Figure 5</a>:
