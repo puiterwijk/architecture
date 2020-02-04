@@ -88,24 +88,24 @@ Table of Contents
    6.  Two Types of Environments of an Attester  . . . . . . . . . .  10
    7.  Trust Model . . . . . . . . . . . . . . . . . . . . . . . . .  11
    8.  Conceptual Messages . . . . . . . . . . . . . . . . . . . . .  11
-   9.  Freshness . . . . . . . . . . . . . . . . . . . . . . . . . .  12
-   10. Privacy Considerations  . . . . . . . . . . . . . . . . . . .  13
-   11. Security Considerations . . . . . . . . . . . . . . . . . . .  13
-   12. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  14
-   13. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  14
-   14. Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  14
-   15. Informative References  . . . . . . . . . . . . . . . . . . .  14
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  14
+     8.1.  Evidence  . . . . . . . . . . . . . . . . . . . . . . . .  12
+     8.2.  Endorsements  . . . . . . . . . . . . . . . . . . . . . .  12
+     8.3.  Attestation Results . . . . . . . . . . . . . . . . . . .  13
+   9.  Claims Encoding Formats . . . . . . . . . . . . . . . . . . .  13
+   10. Freshness . . . . . . . . . . . . . . . . . . . . . . . . . .  15
+   11. Privacy Considerations  . . . . . . . . . . . . . . . . . . .  16
+   12. Security Considerations . . . . . . . . . . . . . . . . . . .  16
+   13. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  17
+   14. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  17
+   15. Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  17
+   16. Informative References  . . . . . . . . . . . . . . . . . . .  17
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  18
 
 1.  Introduction
 
    <more text to be added here>
 
-   Remote Attestation, as used in this document, is a process by which
-   one entity (the "Attester") provides evidence about its identity and
-   state to another remote entity (the "Relying Party"), which then
-   assesses the Attester's trustworthiness for the Relying Party's own
-   purposes.
+
 
 
 
@@ -113,6 +113,12 @@ Birkholz, et al.          Expires 7 August 2020                 [Page 2]
 
 Internet-Draft              RATS Arch & Terms              February 2020
 
+
+   Remote Attestation, as used in this document, is a process by which
+   one entity (the "Attester") provides evidence about its identity and
+   state to another remote entity (the "Relying Party"), which then
+   assesses the Attester's trustworthiness for the Relying Party's own
+   purposes.
 
 2.  Terminology
 
@@ -157,18 +163,16 @@ Internet-Draft              RATS Arch & Terms              February 2020
    *  Verifier: An entity that evaluates the validity of Evidence about
       an Attester.
 
-   *  Verifier Owner: An entity, such as an administrator, that is
-      authorized to configure Appraisal Policy for Evidence in a
-      Verifier.
-
-
-
 
 
 Birkholz, et al.          Expires 7 August 2020                 [Page 3]
 
 Internet-Draft              RATS Arch & Terms              February 2020
 
+
+   *  Verifier Owner: An entity, such as an administrator, that is
+      authorized to configure Appraisal Policy for Evidence in a
+      Verifier.
 
 3.  Reference Use Cases
 
@@ -214,10 +218,6 @@ Internet-Draft              RATS Arch & Terms              February 2020
    trustworthiness of the Attester, and generates Attestation Results
    for use by Relying Parties.  The Evidence Appraisal Policy might be
    obtained from an Endorser along with the Endorsements, or might be
-   obtained via some other mechanism such as being configured in the
-   Verifier by an administrator.
-
-
 
 
 
@@ -225,6 +225,9 @@ Birkholz, et al.          Expires 7 August 2020                 [Page 4]
 
 Internet-Draft              RATS Arch & Terms              February 2020
 
+
+   obtained via some other mechanism such as being configured in the
+   Verifier by an administrator.
 
    The Relying Party uses Attestation Results by applying its own
    Appraisal Policy to make application-specific decisions such as
@@ -270,9 +273,6 @@ Internet-Draft              RATS Arch & Terms              February 2020
    router is an Attester and the main router is the Lead Attester.
 
    Figure 2 depicts the conceptual data flow for a Composite Attester.
-
-
-
 
 
 
@@ -600,8 +600,8 @@ Internet-Draft              RATS Arch & Terms              February 2020
 
 8.  Conceptual Messages
 
-   <this section can include content from Serialization Formats and Conceptual Messages sections from
-   draft-thaler-rats-architecture, and Role Messages content from draft-birkholz-rats-architecture>
+
+
 
 
 
@@ -614,6 +614,174 @@ Internet-Draft              RATS Arch & Terms              February 2020
 
 
 Birkholz, et al.          Expires 7 August 2020                [Page 11]
+
+Internet-Draft              RATS Arch & Terms              February 2020
+
+
+8.1.  Evidence
+
+   Today, Evidence tends to be highly device-specific, since the
+   information in the Evidence often includes vendor-specific
+   information that is necessary to fully describe the manufacturer and
+   model of the device including its security properties, the health of
+   the device, and the level of confidence in the correctness of the
+   information.  Evidence is typically signed by the device (whether by
+   hardware, firmware, or software on the device), and evaluating it in
+   isolation would require Appraisal Policy to be based on device-
+   specific details (e.g., a device public key).
+
+8.2.  Endorsements
+
+   An Endorsement is a secure statement that some entity (e.g., a
+   manufacturer) vouches for the integrity of the device's signing
+   capability.  For example, if the signing capability is in hardware,
+   then an Endorsement might be a manufacturer certificate that signs a
+   public key whose corresponding private key is only known inside the
+   device's hardware.  Thus, when Evidence and such an Endorsement are
+   used together, evaluating them can be done against Appraisal Policy
+   that may not be specific to the device instance, but merely specific
+   to the manufacturer providing the Endorsement.  For example, an
+   Appraisal Policy might simply check that devices from a given
+   manufacturer have information matching a set of known-good reference
+   values, or an Appraisal Policy might have a set of more complex logic
+   on how to evaluate the validity of information.
+
+   However, while an Appraisal Policy that treats all devices from a
+   given manufacturer the same may be appropriate for some use cases, it
+   would be inappropriate to use such an Appraisal Policy as the sole
+   means of authorization for use cases that wish to constrain _which_
+   compliant devices are considered authorized for some purpose.  For
+   example, an enterprise using attestation for Network Endpoint
+   Assessment may not wish to let every healthy laptop from the same
+   manufacturer onto the network, but instead only want to let devices
+   that it legally owns onto the network.  Thus, an Endorsement may be
+   helpful information in authenticating information about a device, but
+   is not necessarily sufficient to authorize access to resources which
+   may need device-specific information such as a public key for the
+   device or component or user on the device.
+
+
+
+
+
+
+
+
+
+
+Birkholz, et al.          Expires 7 August 2020                [Page 12]
+
+Internet-Draft              RATS Arch & Terms              February 2020
+
+
+8.3.  Attestation Results
+
+   Attestation Results may indicate compliance or non-compliance with a
+   Verifier's Appraisal Policy.  A result that indicates non-compliance
+   can be used by an Attester (in the passport model) or a Relying Party
+   (in the background-check model) to indicate that the Attester should
+   not be treated as authorized and may be in need of remediation.  In
+   some cases, it may even indicate that the Evidence itself cannot be
+   authenticated as being correct.
+
+   An Attestation Result that indicates compliance can be used by a
+   Relying Party to make authorization decisions based on the Relying
+   Party's Appraisal Policy.  The simplest such policy might be to
+   simply authorize any party supplying a compliant Attestation Result
+   signed by a trusted Verifier.  A more complex policy might also
+   entail comparing information provided in the result against known-
+   good reference values, or applying more complex logic such
+   information.
+
+   Thus, Attestation Results often need to include detailed information
+   about the Attester, for use by Relying Parties, much like physical
+   passports and drivers licenses include personal information such as
+   name and date of birth.  Unlike Evidence, which is often very device-
+   and vendor-specific, Attestation Results can be vendor-neutral if the
+   Verifier has a way to generate vendor-agnostic information based on
+   evaluating vendor-specific information in Evidence.  This allows a
+   Relying Party's Appraisal Policy to be simpler, potentially based on
+   standard ways of expressing the information, while still allowing
+   interoperability with heterogeneous devices.
+
+   Finally, whereas Evidence is signed by the device (or indirectly by a
+   manufacturer, if Endorsements are used), Attestation Results are
+   signed by a Verifier, allowing a Relying Party to only need a trust
+   relationship with one entity, rather than a larger set of entities,
+   for purposes of its Appraisal Policy.
+
+9.  Claims Encoding Formats
+
+   The following diagram illustrates a relationship to which attestation
+   is desired to be added:
+
+      +-------------+               +-------------+
+      |             |-------------->|             |
+      |  Attester   |  Access some  |   Relying   | Evaluate request
+      |             |    resource   |    Party    | against security policy
+      +-------------+               +-------------+
+
+                     Figure 6: Typical Resource Access
+
+
+
+Birkholz, et al.          Expires 7 August 2020                [Page 13]
+
+Internet-Draft              RATS Arch & Terms              February 2020
+
+
+   In this diagram, the protocol between Attester and a Relying Party
+   can be any new or existing protocol (e.g., HTTP(S), COAP(S), 802.1x,
+   OPC UA, etc.), depending on the use case.  Such protocols typically
+   already have mechanisms for passing security information for purposes
+   of authentication and authorization.  Common formats include JWTs
+   [RFC7519], CWTs [RFC8392], and X.509 certificates.
+
+   To enable attestation to be added to existing protocols, enabling a
+   higher level of assurance against malware for example, it is
+   important that information needed for evaluating the Attester be
+   usable with existing protocols that have constraints around what
+   formats they can transport.  For example, OPC UA [OPCUA] (probably
+   the most common protocol in industrial IoT environments) is defined
+   to carry X.509 certificates and so security information must be
+   embedded into an X.509 certificate to be passed in the protocol.
+   Thus, attestation-related information could be natively encoded in
+   X.509 certificate extensions, or could be natively encoded in some
+   other format (e.g., a CWT) which in turn is then encoded in an X.509
+   certificate extension.
+
+   Especially for constrained nodes, however, there is a desire to
+   minimize the amount of parsing code needed in a Relying Party, in
+   order to both minimize footprint and to minimize the attack surface
+   area.  So while it would be possible to embed a CWT inside a JWT, or
+   a JWT inside an X.509 extension, etc., there is a desire to encode
+   the information natively in the format that is natural for the
+   Relying Party.
+
+   This motivates having a common "information model" that describes the
+   set of attestation related information in an encoding-agnostic way,
+   and allowing multiple encoding formats (CWT, JWT, X.509, etc.) that
+   encode the same information into the claims format needed by the
+   Relying Party.
+
+   The following diagram illustrates that Evidence and Attestation
+   Results might each have multiple possible encoding formats, so that
+   they can be conveyed by various existing protocols.  It also
+   motivates why the Verifier might also be responsible for accepting
+   Evidence that encodes claims in one format, while issuing Attestation
+   Results that encode claims in a different format.
+
+
+
+
+
+
+
+
+
+
+
+Birkholz, et al.          Expires 7 August 2020                [Page 14]
 
 Internet-Draft              RATS Arch & Terms              February 2020
 
@@ -636,10 +804,10 @@ Internet-Draft              RATS Arch & Terms              February 2020
        |  Attester-E  |------------'      '----------->|  Relying Party Z  |
        '--------------'                                `-------------------'
 
-      Figure 6: Multiple Attesters and Relying Parties with Different
+      Figure 7: Multiple Attesters and Relying Parties with Different
                                   Formats
 
-9.  Freshness
+10.  Freshness
 
    It is important to prevent replay attacks where an attacker replays
    old Evidence or an old Attestation Result that is no longer correct.
@@ -669,7 +837,7 @@ Internet-Draft              RATS Arch & Terms              February 2020
 
 
 
-Birkholz, et al.          Expires 7 August 2020                [Page 12]
+Birkholz, et al.          Expires 7 August 2020                [Page 15]
 
 Internet-Draft              RATS Arch & Terms              February 2020
 
@@ -685,7 +853,7 @@ Internet-Draft              RATS Arch & Terms              February 2020
    have been generated at boot, and then used in claims as long as the
    signer can guarantee that they cannot have changed since boot.
 
-10.  Privacy Considerations
+11.  Privacy Considerations
 
    The conveyance of Evidence and the resulting Attestation Results
    reveal a great deal of information about the internal state of a
@@ -700,7 +868,7 @@ Internet-Draft              RATS Arch & Terms              February 2020
    for detailing what kinds of information are disclosed, and to whom
    they are exposed.
 
-11.  Security Considerations
+12.  Security Considerations
 
    Any solution that conveys information used for security purposes,
    whether such information is in the form of Evidence, Attestation
@@ -709,7 +877,7 @@ Internet-Draft              RATS Arch & Terms              February 2020
    also needs to support additional security protections.  For example,
    additional means of authentication, confidentiality, integrity,
    replay, denial of service and privacy protection are needed in many
-   use cases.  Section 9 discusses ways in which freshness can be used
+   use cases.  Section 10 discusses ways in which freshness can be used
    in this architecture to protect against replay attacks.
 
    To evaluate the security provided by a particular Appraisal Policy,
@@ -725,22 +893,22 @@ Internet-Draft              RATS Arch & Terms              February 2020
 
 
 
-Birkholz, et al.          Expires 7 August 2020                [Page 13]
+Birkholz, et al.          Expires 7 August 2020                [Page 16]
 
 Internet-Draft              RATS Arch & Terms              February 2020
 
 
-12.  IANA Considerations
+13.  IANA Considerations
 
    This document does not require any actions by IANA.
 
-13.  Acknowledgments
+14.  Acknowledgments
 
    Special thanks go to David Wooten, Joerg Borchert, Hannes Tschofenig,
    Laurence Lundblade, Diego Lopez, Jessica Fitzgerald-McKay, Frank Xia,
    and Nancy Cam-Winget.
 
-14.  Contributors
+15.  Contributors
 
    Thomas Hardjono created older versions of the terminology section in
    collaboration with Ned Smith.  Eric Voit provided the conceptual
@@ -750,7 +918,7 @@ Internet-Draft              RATS Arch & Terms              February 2020
    the motivational building blocks with respect to the Internet Threat
    Model.
 
-15.  Informative References
+16.  Informative References
 
    [I-D.birkholz-rats-tuda]
               Fuchs, A., Birkholz, H., McDonald, I., and C. Bormann,
@@ -767,6 +935,29 @@ Internet-Draft              RATS Arch & Terms              February 2020
               <http://www.ietf.org/internet-drafts/draft-ietf-teep-
               architecture-05.txt>.
 
+   [OPCUA]    OPC Foundation, "OPC Unified Architecture Specification,
+              Part 2: Security Model, Release 1.03", OPC 10000-2 , 25
+              November 2015, <https://opcfoundation.org/developer-tools/
+              specifications-unified-architecture/part-2-security-
+              model/>.
+
+   [RFC7519]  Jones, M., Bradley, J., and N. Sakimura, "JSON Web Token
+              (JWT)", RFC 7519, DOI 10.17487/RFC7519, May 2015,
+              <https://www.rfc-editor.org/info/rfc7519>.
+
+
+
+
+
+Birkholz, et al.          Expires 7 August 2020                [Page 17]
+
+Internet-Draft              RATS Arch & Terms              February 2020
+
+
+   [RFC8392]  Jones, M., Wahlstroem, E., Erdtman, S., and H. Tschofenig,
+              "CBOR Web Token (CWT)", RFC 8392, DOI 10.17487/RFC8392,
+              May 2018, <https://www.rfc-editor.org/info/rfc8392>.
+
 Authors' Addresses
 
    Henk Birkholz
@@ -776,14 +967,6 @@ Authors' Addresses
    Germany
 
    Email: henk.birkholz@sit.fraunhofer.de
-
-
-
-
-
-Birkholz, et al.          Expires 7 August 2020                [Page 14]
-
-Internet-Draft              RATS Arch & Terms              February 2020
 
 
    Dave Thaler
@@ -822,19 +1005,4 @@ Internet-Draft              RATS Arch & Terms              February 2020
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Birkholz, et al.          Expires 7 August 2020                [Page 15]
+Birkholz, et al.          Expires 7 August 2020                [Page 18]
