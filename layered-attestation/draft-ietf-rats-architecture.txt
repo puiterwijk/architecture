@@ -593,10 +593,10 @@ Internet-Draft              RATS Arch & Terms              February 2020
    component is is the first Attesting Environment.  It collects a
    rather concise number of Claims about the Target Environment.  The
    Target Environment in this example is the (U)EFI / BIOS / Firmware.
-   After the boot sequence started the Target Environment is conducts
-   the most important feature of layered attestation: The successfully
-   measured [comment: this is why Henk prefers 'measured' above
-   'collected' because it can be used in English text better]
+   After the boot sequence started the Target Environment the most
+   important feature of layered attestation is conducted: The
+   successfully measured [comment: this is why Henk prefers 'measured'
+   above 'collected' because it can be used in English text better]
    environment that is the (U)EFI / BIOS / Firmware now becomes the
    Attesting Environment.
 
