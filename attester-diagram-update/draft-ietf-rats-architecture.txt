@@ -307,7 +307,7 @@ Internet-Draft              RATS Arch & Terms              February 2020
    | | Lead Attester A                      |                         |
    | '--------------------------------------'                         |
    |                                                                  |
-   |                           Attester                               |
+   |                           Device                                 |
    '------------------------------------------------------------------'
 
           Figure 2: Conceptual Data Flow for a Composite Attester
