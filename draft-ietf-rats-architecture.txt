@@ -360,19 +360,19 @@ Internet-Draft              RATS Arch & Terms              February 2020
    Result to a Relying Party, which then compares the Attestation Result
    against its own Appraisal Policy.
 
-   There are two ways in which the process may fail.  First, the
+   There are three ways in which the process may fail.  First, the
    Verifier may refuse to issue the Attestation Result due to some error
    in processing, or some missing input to the Verifier.  The second way
-   in which the process mail is when the resulting Result is examined by
-   the Relying Party, and based upon the Appraisal Policy, the result
-   does not pass the policy.
+   in which the process may fail is when the resulting Result is
+   examined by the Relying Party, and based upon the Appraisal Policy,
+   the result does not pass the policy.  The third way is when the
+   verifier is unreachable.
 
    Since the resource access protocol between the Attester and Relying
    Party includes an Attestation Result, in this model the details of
    that protocol constrain the serialization format of the Attestation
    Result.  The format of the Evidence on the other hand is only
    constrained by the Attester-Verifier attestation protocol.
-
 
 
 
