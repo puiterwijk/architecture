@@ -1238,14 +1238,20 @@ the Evidence against its Appraisal Policy.  The Verifier then gives back
 an Attestation Result.  If the Attestation Result was a successful one,
 the Attester can then present the Attestation Result to a Relying Party,
 which then compares the Attestation Result against its own Appraisal Policy.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
-<p id="section-5.1-2">Since the resource access protocol between the Attester and Relying Party
+<p id="section-5.1-2">There are two ways in which the process may fail.  First, the Verifier may
+refuse to issue the Attestation Result due to some error in processing, or
+some missing input to the Verifier.
+The second way in which the process mail is when the resulting Result is
+examined by the Relying Party, and based upon the Appraisal Policy, the
+result does not pass the policy.<a href="#section-5.1-2" class="pilcrow">¶</a></p>
+<p id="section-5.1-3">Since the resource access protocol between the Attester and Relying Party
 includes an Attestation Result, in this model the details of that protocol
 constrain the serialization format of the Attestation Result. The
 format of the Evidence on the other hand is only constrained by the
-Attester-Verifier attestation protocol.<a href="#section-5.1-2" class="pilcrow">¶</a></p>
+Attester-Verifier attestation protocol.<a href="#section-5.1-3" class="pilcrow">¶</a></p>
 <span id="name-passport-model-2"></span><div id="passport">
 <figure id="figure-3">
-          <div class="artwork art-text alignLeft" id="section-5.1-3.1">
+          <div class="artwork art-text alignLeft" id="section-5.1-4.1">
 <pre>
       +-------------+
       |             | Compare Evidence
@@ -1267,7 +1273,7 @@ Attester-Verifier attestation protocol.<a href="#section-5.1-2" class="pilcrow">
 <a href="#name-passport-model-2" class="selfRef">Passport Model</a>
           </figcaption></figure>
 </div>
-<p id="section-5.1-4">The passport model is so named because of its resemblance to how nations issue
+<p id="section-5.1-5">The passport model is so named because of its resemblance to how nations issue
 passports to their citizens. The nature of the Evidence that an individual needs
 to provide to its local authority is specific to the country involved. The citizen
 retains control of the resulting passport document and presents it to other entities
@@ -1275,7 +1281,7 @@ when it needs to assert a citizenship or identity claim, such as an airport immi
 desk. The passport is considered sufficient because it vouches for the citizenship and
 identity claims, and it is issued by a trusted authority. Thus, in this immigration
 desk analogy, the passport issuing agency is a Verifier, the passport is an Attestation
-Result, and the immigration desk is a Relying Party.<a href="#section-5.1-4" class="pilcrow">¶</a></p>
+Result, and the immigration desk is a Relying Party.<a href="#section-5.1-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="background-check-model">
@@ -1286,8 +1292,8 @@ Result, and the immigration desk is a Relying Party.<a href="#section-5.1-4" cla
 <p id="section-5.2-1">In this model, an Attester sends Evidence to a Relying Party, which simply
 passes it on to a Verifier.  The Verifier then compares the Evidence against
 its Appraisal Policy, and returns an Attestation Result to the Relying Party.
-The Relying Party then compares the Attestation Result against its own security
-policy.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
+The Relying Party then compares the Attestation Result against its own
+appraisal policy.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
 <p id="section-5.2-2">The resource access protocol between the Attester and Relying Party
 includes Evidence rather than an Attestation Result, but that Evidence is
 not processed by the Relying Party.  Since the Evidence is merely forwarded
