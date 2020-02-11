@@ -272,7 +272,7 @@ Internet-Draft              RATS Arch & Terms              February 2020
    this case, the multi-chassis router is the Composite Attester, each
    router is an Attester and the main router is the Lead Attester.
 
-   Figure 2 depicts the conceptual data flow for a Composite Attester.
+   Figure 2 depicts the conceptual data flow for a Composite Device.
 
 
 
@@ -307,13 +307,13 @@ Internet-Draft              RATS Arch & Terms              February 2020
    | | Lead Attester A                      |                         |
    | '--------------------------------------'                         |
    |                                                                  |
-   |                    Device/Composite Device/Attester/TBD #33      |
+   |                       Composite Device                           |
    '------------------------------------------------------------------'
 
-          Figure 2: Conceptual Data Flow for a Composite Attester
+           Figure 2: Conceptual Data Flow for a Composite Device
 
-   In the Composite Attester, each Attester generates its own Evidence
-   by its Attesting Environment(s) collecting the claims from its Target
+   In the Composite Device, each Attester generates its own Evidence by
+   its Attesting Environment(s) collecting the claims from its Target
    Environment(s).  The Lead Attester collects the Evidence of all other
    Attesters and then generates the Evidence of the whole Composite
    Attester.
@@ -322,9 +322,9 @@ Internet-Draft              RATS Arch & Terms              February 2020
    own Verifier.  One situation is that the Attesting Environment has no
    internal Verifier.  In this situation, the Lead Attesting Environment
    simply combines the various Evidences into the final Evidence that is
-   sent off to the remote Verifier, which evaluates the Composite
-   Attester's, including the Lead Attester's and other Attesters',
-   trustworthiness.
+   sent off to the remote Verifier, which evaluates the trusworthiness
+   of the Composite Device, including the Lead Attester's and other
+   Attesters', trustworthiness.
 
    The other situation is that the Lead Attesting Environment has an
    internal Verifier.  After collecting the Evidence of other Attesters,
