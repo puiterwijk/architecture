@@ -93,19 +93,19 @@ Table of Contents
      5.3.  Combinations  . . . . . . . . . . . . . . . . . . . . . .  12
    6.  Two Types of Environments of an Attester  . . . . . . . . . .  13
    7.  Trust Model . . . . . . . . . . . . . . . . . . . . . . . . .  14
-   8.  Conceptual Messages . . . . . . . . . . . . . . . . . . . . .  15
-     8.1.  Evidence  . . . . . . . . . . . . . . . . . . . . . . . .  15
+   8.  Conceptual Messages . . . . . . . . . . . . . . . . . . . . .  14
+     8.1.  Evidence  . . . . . . . . . . . . . . . . . . . . . . . .  14
      8.2.  Endorsements  . . . . . . . . . . . . . . . . . . . . . .  15
-     8.3.  Attestation Results . . . . . . . . . . . . . . . . . . .  16
+     8.3.  Attestation Results . . . . . . . . . . . . . . . . . . .  15
    9.  Claims Encoding Formats . . . . . . . . . . . . . . . . . . .  16
    10. Freshness . . . . . . . . . . . . . . . . . . . . . . . . . .  18
-   11. Privacy Considerations  . . . . . . . . . . . . . . . . . . .  19
+   11. Privacy Considerations  . . . . . . . . . . . . . . . . . . .  18
    12. Security Considerations . . . . . . . . . . . . . . . . . . .  19
-   13. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  20
-   14. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  20
-   15. Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  20
+   13. IANA Considerations . . . . . . . . . . . . . . . . . . . . .  19
+   14. Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  19
+   15. Contributors  . . . . . . . . . . . . . . . . . . . . . . . .  19
    16. Informative References  . . . . . . . . . . . . . . . . . . .  20
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  21
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  20
 
 
 
@@ -754,12 +754,6 @@ Internet-Draft              RATS Arch & Terms              February 2020
    trustworthiness of the Verifier before accepting its Attestation
    Results.
 
-   In solutions following the background-check model, the Attester is
-   assumed to trust the Verifier (again, whether directly or indirectly
-   via a Certificate Authority that it trusts), since the Attester
-   relies on an Attestation Result it obtains from the Verifier, in
-   order to access resources.
-
    The Verifier trusts (or more specifically, the Verifier's security
    policy is written in a way that configures the Verifier to trust) a
    manufacturer, or the manufacturer's hardware, so as to be able to
@@ -775,17 +769,6 @@ Internet-Draft              RATS Arch & Terms              February 2020
    tampering.  The component that is implicitly trusted is often
    referred to as a Root of Trust.
 
-
-
-
-
-
-
-Birkholz, et al.         Expires 28 August 2020                [Page 14]
-
-Internet-Draft              RATS Arch & Terms              February 2020
-
-
 8.  Conceptual Messages
 
 8.1.  Evidence
@@ -795,6 +778,14 @@ Internet-Draft              RATS Arch & Terms              February 2020
    information that is necessary to fully describe the manufacturer and
    model of the device including its security properties, the health of
    the device, and the level of confidence in the correctness of the
+
+
+
+Birkholz, et al.         Expires 28 August 2020                [Page 14]
+
+Internet-Draft              RATS Arch & Terms              February 2020
+
+
    information.  Evidence is typically signed by the device (whether by
    hardware, firmware, or software on the device), and evaluating it in
    isolation would require Appraisal Policy to be based on device-
@@ -830,18 +821,6 @@ Internet-Draft              RATS Arch & Terms              February 2020
    may need device-specific information such as a public key for the
    device or component or user on the device.
 
-
-
-
-
-
-
-
-Birkholz, et al.         Expires 28 August 2020                [Page 15]
-
-Internet-Draft              RATS Arch & Terms              February 2020
-
-
 8.3.  Attestation Results
 
    Attestation Results may indicate compliance or non-compliance with a
@@ -855,6 +834,14 @@ Internet-Draft              RATS Arch & Terms              February 2020
    An Attestation Result that indicates compliance can be used by a
    Relying Party to make authorization decisions based on the Relying
    Party's Appraisal Policy.  The simplest such policy might be to
+
+
+
+Birkholz, et al.         Expires 28 August 2020                [Page 15]
+
+Internet-Draft              RATS Arch & Terms              February 2020
+
+
    simply authorize any party supplying a compliant Attestation Result
    signed by a trusted Verifier.  A more complex policy might also
    entail comparing information provided in the result against known-
@@ -891,13 +878,6 @@ Internet-Draft              RATS Arch & Terms              February 2020
 
                      Figure 6: Typical Resource Access
 
-
-
-Birkholz, et al.         Expires 28 August 2020                [Page 16]
-
-Internet-Draft              RATS Arch & Terms              February 2020
-
-
    In this diagram, the protocol between Attester and a Relying Party
    can be any new or existing protocol (e.g., HTTP(S), COAP(S), 802.1x,
    OPC UA, etc.), depending on the use case.  Such protocols typically
@@ -910,6 +890,14 @@ Internet-Draft              RATS Arch & Terms              February 2020
    important that information needed for evaluating the Attester be
    usable with existing protocols that have constraints around what
    formats they can transport.  For example, OPC UA [OPCUA] (probably
+
+
+
+Birkholz, et al.         Expires 28 August 2020                [Page 16]
+
+Internet-Draft              RATS Arch & Terms              February 2020
+
+
    the most common protocol in industrial IoT environments) is defined
    to carry X.509 certificates and so security information must be
    embedded into an X.509 certificate to be passed in the protocol.
@@ -939,21 +927,6 @@ Internet-Draft              RATS Arch & Terms              February 2020
    Evidence that encodes claims in one format, while issuing Attestation
    Results that encode claims in a different format.
 
-
-
-
-
-
-
-
-
-
-
-Birkholz, et al.         Expires 28 August 2020                [Page 17]
-
-Internet-Draft              RATS Arch & Terms              February 2020
-
-
                        Evidence           Attestation Results
 
        .--------------.   CWT                    CWT   .-------------------.
@@ -971,6 +944,15 @@ Internet-Draft              RATS Arch & Terms              February 2020
        .--------------.  other     ^      |     other  .-------------------.
        |  Attester-E  |------------'      '----------->|  Relying Party Z  |
        '--------------'                                `-------------------'
+
+
+
+
+
+Birkholz, et al.         Expires 28 August 2020                [Page 17]
+
+Internet-Draft              RATS Arch & Terms              February 2020
+
 
       Figure 7: Multiple Attesters and Relying Parties with Different
                                   Formats
@@ -1002,14 +984,6 @@ Internet-Draft              RATS Arch & Terms              February 2020
    signed timestamp (e.g., using [I-D.birkholz-rats-tuda]) along with
    the claims in the Evidence or Attestation Result, so that the remote
    entity knows that the claims were signed at that time, as long as it
-
-
-
-Birkholz, et al.         Expires 28 August 2020                [Page 18]
-
-Internet-Draft              RATS Arch & Terms              February 2020
-
-
    has some assurance that the timestamp is correct.  This typically
    requires additional claims about the signer's time synchronization
    mechanism in order to provide such assurance.
@@ -1028,6 +1002,14 @@ Internet-Draft              RATS Arch & Terms              February 2020
    device.  In many cases, the whole point of the Attestation process is
    to provide reliable information about the type of the device and the
    firmware/software that the device is running.  This information is
+
+
+
+Birkholz, et al.         Expires 28 August 2020                [Page 18]
+
+Internet-Draft              RATS Arch & Terms              February 2020
+
+
    particularly interesting to many attackers.  For example, knowing
    that a device is running a weak version of firmware provides a way to
    aim attacks better.
@@ -1059,22 +1041,15 @@ Internet-Draft              RATS Arch & Terms              February 2020
    attest to the health of the client providing the Appraisal Policy
    needs to be considered.
 
-
-
-Birkholz, et al.         Expires 28 August 2020                [Page 19]
-
-Internet-Draft              RATS Arch & Terms              February 2020
-
-
 13.  IANA Considerations
 
    This document does not require any actions by IANA.
 
 14.  Acknowledgments
 
-   Special thanks go to David Wooten, Joerg Borchert, Hannes Tschofenig,
-   Laurence Lundblade, Diego Lopez, Jessica Fitzgerald-McKay, Frank Xia,
-   and Nancy Cam-Winget.
+   Special thanks go to Joerg Borchert, Nancy Cam-Winget, Jessica
+   Fitzgerald-McKay, Thomas Fossati, Diego Lopez, Laurence Lundblade,
+   Wei Pan, Paul Rowe, Hannes Tschofenig, Frank Xia, and David Wooten.
 
 15.  Contributors
 
@@ -1083,6 +1058,14 @@ Internet-Draft              RATS Arch & Terms              February 2020
    separation between Attestation Provision Flows and Attestation
    Evidence Flows.  Monty Wisemen created the content structure of the
    first three architecture drafts.  Carsten Bormann provided many of
+
+
+
+Birkholz, et al.         Expires 28 August 2020                [Page 19]
+
+Internet-Draft              RATS Arch & Terms              February 2020
+
+
    the motivational building blocks with respect to the Internet Threat
    Model.
 
@@ -1113,15 +1096,6 @@ Internet-Draft              RATS Arch & Terms              February 2020
               (JWT)", RFC 7519, DOI 10.17487/RFC7519, May 2015,
               <https://www.rfc-editor.org/info/rfc7519>.
 
-
-
-
-
-Birkholz, et al.         Expires 28 August 2020                [Page 20]
-
-Internet-Draft              RATS Arch & Terms              February 2020
-
-
    [RFC8392]  Jones, M., Wahlstroem, E., Erdtman, S., and H. Tschofenig,
               "CBOR Web Token (CWT)", RFC 8392, DOI 10.17487/RFC8392,
               May 2018, <https://www.rfc-editor.org/info/rfc8392>.
@@ -1139,6 +1113,15 @@ Authors' Addresses
 
    Dave Thaler
    Microsoft
+
+
+
+
+Birkholz, et al.         Expires 28 August 2020                [Page 20]
+
+Internet-Draft              RATS Arch & Terms              February 2020
+
+
    United States of America
 
    Email: dthaler@microsoft.com
@@ -1156,6 +1139,23 @@ Authors' Addresses
    United States of America
 
    Email: ned.smith@intel.com
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
