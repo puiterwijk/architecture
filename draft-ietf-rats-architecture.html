@@ -1604,6 +1604,12 @@ A stronger level of security comes when information can be vouched
 for by hardware or by ROM code, especially if such hardware is
 physically resistant to hardware tampering.  The component that is
 implicitly trusted is often referred to as a Root of Trust.<a href="#section-7-2" class="pilcrow">¶</a></p>
+<p id="section-7-3">In some scenarios, Evidence might contain sensitive information such as
+Personally Identifiable Information.
+Thus, an Attester must trust entities to which it sends Evidence, to not
+reveal sensitive data to unauthorized parties.
+The Verifier may share this information with other authorized parties, according rules that it controls.
+In the background-check model, this Evidence may also be revealed to Relying Party(s).<a href="#section-7-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="messages">
