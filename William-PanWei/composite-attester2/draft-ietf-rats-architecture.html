@@ -1591,11 +1591,7 @@ Party combination).  Or, for a stronger level of security, the
 Relying Party might require that the Verifier itself provide
 information about itself that the Relying Party can use to evaluate
 the trustworthiness of the Verifier before accepting its Attestation Results.<a href="#section-7-1" class="pilcrow">¶</a></p>
-<p id="section-7-2">Similar to the Relying Party, the Endorser and Verifier Owner also
-need to trust the Verifier before giving the Endorsement and
-Appraisal Policy to it. Such trust can also be established directly
-or indirectly, implicitly or explicitly.<a href="#section-7-2" class="pilcrow">¶</a></p>
-<p id="section-7-3">The Verifier trusts (or more specifically, the Verifier's security
+<p id="section-7-2">The Verifier trusts (or more specifically, the Verifier's security
 policy is written in a way that configures the Verifier to trust) a
 manufacturer, or the manufacturer's hardware, so as to be able to
 evaluate the trustworthiness of that manufacturer's devices.  In solutions
@@ -1607,13 +1603,13 @@ provided about it by the lower-layer hypervisor or firmware is true.
 A stronger level of security comes when information can be vouched
 for by hardware or by ROM code, especially if such hardware is
 physically resistant to hardware tampering.  The component that is
-implicitly trusted is often referred to as a Root of Trust.<a href="#section-7-3" class="pilcrow">¶</a></p>
-<p id="section-7-4">In some scenarios, Evidence might contain sensitive information such as
+implicitly trusted is often referred to as a Root of Trust.<a href="#section-7-2" class="pilcrow">¶</a></p>
+<p id="section-7-3">In some scenarios, Evidence might contain sensitive information such as
 Personally Identifiable Information.
 Thus, an Attester must trust entities to which it sends Evidence, to not
 reveal sensitive data to unauthorized parties.
 The Verifier may share this information with other authorized parties, according rules that it controls.
-In the background-check model, this Evidence may also be revealed to Relying Party(s).<a href="#section-7-4" class="pilcrow">¶</a></p>
+In the background-check model, this Evidence may also be revealed to Relying Party(s).<a href="#section-7-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="messages">
