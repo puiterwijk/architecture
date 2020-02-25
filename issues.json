@@ -1,6 +1,156 @@
 [
 
   {
+    "url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/44",
+    "repository_url": "https://api.github.com/repos/ietf-rats-wg/architecture",
+    "labels_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/44/labels{/name}",
+    "comments_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/44/comments",
+    "events_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/44/events",
+    "html_url": "https://github.com/ietf-rats-wg/architecture/pull/44",
+    "id": 570630117,
+    "node_id": "MDExOlB1bGxSZXF1ZXN0Mzc5NjMyNTQ4",
+    "number": 44,
+    "title": "Add reference use cases",
+    "user": {
+      "login": "dthaler",
+      "id": 6547784,
+      "node_id": "MDQ6VXNlcjY1NDc3ODQ=",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/6547784?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/dthaler",
+      "html_url": "https://github.com/dthaler",
+      "followers_url": "https://api.github.com/users/dthaler/followers",
+      "following_url": "https://api.github.com/users/dthaler/following{/other_user}",
+      "gists_url": "https://api.github.com/users/dthaler/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/dthaler/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/dthaler/subscriptions",
+      "organizations_url": "https://api.github.com/users/dthaler/orgs",
+      "repos_url": "https://api.github.com/users/dthaler/repos",
+      "events_url": "https://api.github.com/users/dthaler/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/dthaler/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2020-02-25T14:57:56Z",
+    "updated_at": "2020-02-25T14:57:56Z",
+    "closed_at": null,
+    "author_association": "COLLABORATOR",
+    "pull_request": {
+      "url": "https://api.github.com/repos/ietf-rats-wg/architecture/pulls/44",
+      "html_url": "https://github.com/ietf-rats-wg/architecture/pull/44",
+      "diff_url": "https://github.com/ietf-rats-wg/architecture/pull/44.diff",
+      "patch_url": "https://github.com/ietf-rats-wg/architecture/pull/44.patch"
+    },
+    "body": "Signed-off-by: Dave Thaler <dthaler@microsoft.com>"
+  },
+  {
+    "url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/43",
+    "repository_url": "https://api.github.com/repos/ietf-rats-wg/architecture",
+    "labels_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/43/labels{/name}",
+    "comments_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/43/comments",
+    "events_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/43/events",
+    "html_url": "https://github.com/ietf-rats-wg/architecture/issues/43",
+    "id": 563302994,
+    "node_id": "MDU6SXNzdWU1NjMzMDI5OTQ=",
+    "number": 43,
+    "title": "composite device needs text to explain composite evidence",
+    "user": {
+      "login": "mcr",
+      "id": 25774,
+      "node_id": "MDQ6VXNlcjI1Nzc0",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/25774?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mcr",
+      "html_url": "https://github.com/mcr",
+      "followers_url": "https://api.github.com/users/mcr/followers",
+      "following_url": "https://api.github.com/users/mcr/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mcr/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mcr/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mcr/subscriptions",
+      "organizations_url": "https://api.github.com/users/mcr/orgs",
+      "repos_url": "https://api.github.com/users/mcr/repos",
+      "events_url": "https://api.github.com/users/mcr/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mcr/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2020-02-11T15:55:46Z",
+    "updated_at": "2020-02-11T15:55:46Z",
+    "closed_at": null,
+    "author_association": "COLLABORATOR",
+    "body": "Early on, we need to explain what the composite evidence is.\r\n\r\n"
+  },
+  {
+    "url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/42",
+    "repository_url": "https://api.github.com/repos/ietf-rats-wg/architecture",
+    "labels_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/42/labels{/name}",
+    "comments_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/42/comments",
+    "events_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/42/events",
+    "html_url": "https://github.com/ietf-rats-wg/architecture/issues/42",
+    "id": 563269803,
+    "node_id": "MDU6SXNzdWU1NjMyNjk4MDM=",
+    "number": 42,
+    "title": "to what extent does the security considerations talk about how long things are valid?",
+    "user": {
+      "login": "mcr",
+      "id": 25774,
+      "node_id": "MDQ6VXNlcjI1Nzc0",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/25774?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mcr",
+      "html_url": "https://github.com/mcr",
+      "followers_url": "https://api.github.com/users/mcr/followers",
+      "following_url": "https://api.github.com/users/mcr/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mcr/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mcr/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mcr/subscriptions",
+      "organizations_url": "https://api.github.com/users/mcr/orgs",
+      "repos_url": "https://api.github.com/users/mcr/repos",
+      "events_url": "https://api.github.com/users/mcr/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mcr/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+
+    ],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [
+
+    ],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2020-02-11T15:07:17Z",
+    "updated_at": "2020-02-11T15:07:17Z",
+    "closed_at": null,
+    "author_association": "COLLABORATOR",
+    "body": "TEEP and others needs to know what kind of SLA RATS can provide.\r\n"
+  },
+  {
     "url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/41",
     "repository_url": "https://api.github.com/repos/ietf-rats-wg/architecture",
     "labels_url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/41/labels{/name}",
@@ -89,9 +239,9 @@
 
     ],
     "milestone": null,
-    "comments": 1,
+    "comments": 2,
     "created_at": "2020-02-05T06:10:50Z",
-    "updated_at": "2020-02-11T14:45:10Z",
+    "updated_at": "2020-02-12T01:29:26Z",
     "closed_at": null,
     "author_association": "NONE",
     "body": "It seems to me the statement applies for both models (passport model and BC model)."
@@ -137,9 +287,9 @@
 
     ],
     "milestone": null,
-    "comments": 0,
+    "comments": 1,
     "created_at": "2020-02-05T06:08:23Z",
-    "updated_at": "2020-02-11T14:46:10Z",
+    "updated_at": "2020-02-12T01:35:50Z",
     "closed_at": null,
     "author_association": "NONE",
     "body": "Since the resource access protocol between the Attester and Relying\r\nParty includes an Attestation Result, in this model the details of\r\nthat protocol constrain the serialization format of the Attestation\r\nResult. The format of the Evidence on the other hand is only\r\nconstrained by the Attester-Verifier attestation protocol. \"So...\""
@@ -178,17 +328,17 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
 
     ],
     "milestone": null,
-    "comments": 0,
+    "comments": 1,
     "created_at": "2020-02-05T06:05:55Z",
-    "updated_at": "2020-02-05T06:05:55Z",
-    "closed_at": null,
+    "updated_at": "2020-02-11T15:57:59Z",
+    "closed_at": "2020-02-11T15:57:59Z",
     "author_association": "NONE",
     "body": ""
   },
@@ -226,17 +376,17 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
 
     ],
     "milestone": null,
-    "comments": 0,
+    "comments": 3,
     "created_at": "2020-02-05T06:04:09Z",
-    "updated_at": "2020-02-05T06:04:09Z",
-    "closed_at": null,
+    "updated_at": "2020-02-11T15:27:04Z",
+    "closed_at": "2020-02-11T15:27:04Z",
     "author_association": "NONE",
     "body": "The more accurate text should be compliance or non-compliance.\r\nAnd whatever the attestation result is, the attester should always present the attestation result to the relying party, I think. "
   },
@@ -274,7 +424,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -283,8 +433,8 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2020-02-05T06:00:01Z",
-    "updated_at": "2020-02-05T06:00:01Z",
-    "closed_at": null,
+    "updated_at": "2020-02-11T15:34:34Z",
+    "closed_at": "2020-02-11T15:34:34Z",
     "author_association": "NONE",
     "body": "I don't think so, since it's just the RoTS and RoTR, but not the RoTM.\r\nOpinions?"
   },
@@ -418,7 +568,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -427,8 +577,8 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2020-02-04T15:40:22Z",
-    "updated_at": "2020-02-04T15:40:22Z",
-    "closed_at": null,
+    "updated_at": "2020-02-11T15:41:06Z",
+    "closed_at": "2020-02-11T15:41:06Z",
     "author_association": "COLLABORATOR",
     "body": "What should the label on the outer box be: Device or Composite Device or Attester or ...?\r\n"
   },
@@ -520,17 +670,17 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
 
     ],
     "milestone": null,
-    "comments": 0,
+    "comments": 1,
     "created_at": "2020-02-04T15:21:44Z",
-    "updated_at": "2020-02-04T15:21:44Z",
-    "closed_at": null,
+    "updated_at": "2020-02-11T15:59:15Z",
+    "closed_at": "2020-02-11T15:59:15Z",
     "author_association": "COLLABORATOR",
     "body": ""
   },
@@ -577,7 +727,7 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2020-02-04T11:30:23Z",
-    "updated_at": "2020-02-05T17:09:25Z",
+    "updated_at": "2020-02-11T15:29:19Z",
     "closed_at": null,
     "author_association": "COLLABORATOR",
     "pull_request": {
@@ -652,7 +802,7 @@
     "id": 559428911,
     "node_id": "MDExOlB1bGxSZXF1ZXN0MzcwNTk5NzE4",
     "number": 28,
-    "title": "Lead Attester may be evaluated first than other Attesters",
+    "title": "Verifier also needs to be trusted by Endorser and Verifier Owner",
     "user": {
       "login": "William-PanWei",
       "id": 44770431,
@@ -685,7 +835,7 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2020-02-04T01:16:06Z",
-    "updated_at": "2020-02-04T15:01:36Z",
+    "updated_at": "2020-02-25T07:35:19Z",
     "closed_at": null,
     "author_association": "CONTRIBUTOR",
     "pull_request": {
@@ -784,7 +934,7 @@
     "labels": [
 
     ],
-    "state": "open",
+    "state": "closed",
     "locked": false,
     "assignee": null,
     "assignees": [
@@ -793,8 +943,8 @@
     "milestone": null,
     "comments": 0,
     "created_at": "2020-01-28T16:11:47Z",
-    "updated_at": "2020-01-28T16:11:47Z",
-    "closed_at": null,
+    "updated_at": "2020-02-11T15:59:46Z",
+    "closed_at": "2020-02-11T15:59:45Z",
     "author_association": "COLLABORATOR",
     "body": "<this section can include content from Serialization Formats and Conceptual Messages sections from\r\ndraft-thaler-rats-architecture, and Role Messages content from draft-birkholz-rats-architecture>\r\n"
   },
@@ -1533,7 +1683,10 @@
       "patch_url": "https://github.com/ietf-rats-wg/architecture/pull/15.patch"
     },
     "body": "Incorporating text from draft-birkholz-rats-architecture\r\nand from my reading of the \"bike shed\" mailing list thread\r\n\r\nSigned-off-by: Dave Thaler <dthaler@microsoft.com>"
-  },
+  }
+
+,
+
   {
     "url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/14",
     "repository_url": "https://api.github.com/repos/ietf-rats-wg/architecture",
@@ -1747,10 +1900,7 @@
       "patch_url": "https://github.com/ietf-rats-wg/architecture/pull/12.patch"
     },
     "body": "When comparing the term 'Appraisal Policy for Evidence' and 'Appraisal Policy for Attestation Result', they are both saying 'evaluates the validity of information about an Attester'. This makes me feel Verifier and Relying Party are doing the same things and they are redundant. I think it's more appropriate to say that the Relying Party evaluates the evaluation results generated by the Verifiers."
-  }
-
-,
-
+  },
   {
     "url": "https://api.github.com/repos/ietf-rats-wg/architecture/issues/11",
     "repository_url": "https://api.github.com/repos/ietf-rats-wg/architecture",
