@@ -826,7 +826,7 @@ table.left {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Birkholz, et al.</td>
-<td class="center">Expires 14 August 2020</td>
+<td class="center">Expires 28 August 2020</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -839,12 +839,12 @@ table.left {
 <dd class="internet-draft">draft-ietf-rats-architecture-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2020-02-11" class="published">11 February 2020</time>
+<time datetime="2020-02-25" class="published">25 February 2020</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2020-08-14">14 August 2020</time></dd>
+<dd class="expires"><time datetime="2020-08-28">28 August 2020</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -904,7 +904,7 @@ remote attestation procedures (RATS).<a href="#section-abstract-1" class="pilcro
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 14 August 2020.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 28 August 2020.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -941,6 +941,26 @@ remote attestation procedures (RATS).<a href="#section-abstract-1" class="pilcro
 </li>
 <li class="toc ulEmpty" id="section-toc.1-1.3">
             <p id="section-toc.1-1.3.1"><a href="#section-3" class="xref">3</a>.  <a href="#name-reference-use-cases" class="xref">Reference Use Cases</a><a href="#section-toc.1-1.3.1" class="pilcrow">¶</a></p>
+<ul class="toc ulEmpty">
+<li class="toc ulEmpty" id="section-toc.1-1.3.2.1">
+                <p id="section-toc.1-1.3.2.1.1"><a href="#section-3.1" class="xref">3.1</a>.  <a href="#name-network-endpoint-assessment" class="xref">Network Endpoint Assessment</a><a href="#section-toc.1-1.3.2.1.1" class="pilcrow">¶</a></p>
+</li>
+<li class="toc ulEmpty" id="section-toc.1-1.3.2.2">
+                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="xref">3.2</a>.  <a href="#name-confidential-machine-learni" class="xref">Confidential Machine Learning (ML) Model Protection</a><a href="#section-toc.1-1.3.2.2.1" class="pilcrow">¶</a></p>
+</li>
+<li class="toc ulEmpty" id="section-toc.1-1.3.2.3">
+                <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="xref">3.3</a>.  <a href="#name-confidential-data-retrieval" class="xref">Confidential Data Retrieval</a><a href="#section-toc.1-1.3.2.3.1" class="pilcrow">¶</a></p>
+</li>
+<li class="toc ulEmpty" id="section-toc.1-1.3.2.4">
+                <p id="section-toc.1-1.3.2.4.1"><a href="#section-3.4" class="xref">3.4</a>.  <a href="#name-critical-infrastructure-con" class="xref">Critical Infrastructure Control</a><a href="#section-toc.1-1.3.2.4.1" class="pilcrow">¶</a></p>
+</li>
+<li class="toc ulEmpty" id="section-toc.1-1.3.2.5">
+                <p id="section-toc.1-1.3.2.5.1"><a href="#section-3.5" class="xref">3.5</a>.  <a href="#name-trusted-execution-environme" class="xref">Trusted Execution Environment (TEE) Provisioning</a><a href="#section-toc.1-1.3.2.5.1" class="pilcrow">¶</a></p>
+</li>
+<li class="toc ulEmpty" id="section-toc.1-1.3.2.6">
+                <p id="section-toc.1-1.3.2.6.1"><a href="#section-3.6" class="xref">3.6</a>.  <a href="#name-hardware-watchdog" class="xref">Hardware Watchdog</a><a href="#section-toc.1-1.3.2.6.1" class="pilcrow">¶</a></p>
+</li>
+</ul>
 </li>
 <li class="toc ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="xref">4</a>.  <a href="#name-architectural-overview" class="xref">Architectural Overview</a><a href="#section-toc.1-1.4.1" class="pilcrow">¶</a></p>
@@ -1068,10 +1088,145 @@ Attester's trustworthiness for the Relying Party's own purposes.<a href="#sectio
       <h2 id="name-reference-use-cases">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-reference-use-cases" class="section-name selfRef">Reference Use Cases</a>
       </h2>
-<div class="artwork art-text alignLeft" id="section-3-1">
-<pre>
-&lt;unclear if the WG wants this section in the arch doc&gt;
-</pre><a href="#section-3-1" class="pilcrow">¶</a>
+<p id="section-3-1">This section covers a number of representative use cases for attestation, independent of
+solution.  The purpose is to provide motivation for various aspects of the
+architecture presented in this draft.  Many other use cases exist, and this
+document does not intend to have a complete list, only to have a set of use
+cases that collectively cover all the functionality required in the architecture.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-2">Each use case includes a description, and a summary of what an Attester and a Relying
+Party refer to in the use case.<a href="#section-3-2" class="pilcrow">¶</a></p>
+<div id="network-endpoint-assessment">
+<section id="section-3.1">
+        <h3 id="name-network-endpoint-assessment">
+<a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-network-endpoint-assessment" class="section-name selfRef">Network Endpoint Assessment</a>
+        </h3>
+<p id="section-3.1-1">Network operators want a trustworthy report of identity
+and version of information of the hardware and software on the
+machines attached to their network, for purposes such as inventory,
+auditing, and/or logging.  The network operator may also want a policy
+by which full access is only granted to devices that meet some definition
+of health, and so wants to get claims about such information and verify
+their validity. Attestation is desired to prevent vulnerable or
+compromised devices from getting access to the network and potentially
+harming others.<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-2">Typically, solutions start with some component (called a "Root of Trust") that
+provides device identity and protected storage for measurements.
+They then perform a series of measurements, and express this with Evidence as to the
+hardware and firmware/software that is running.<a href="#section-3.1-2" class="pilcrow">¶</a></p>
+<ul>
+<li id="section-3.1-3.1">Attester: A device desiring access to a network<a href="#section-3.1-3.1" class="pilcrow">¶</a>
+</li>
+<li id="section-3.1-3.2">Relying Party: A network infrastructure device such as a router, switch, or access point.<a href="#section-3.1-3.2" class="pilcrow">¶</a>
+</li>
+</ul>
+</section>
+</div>
+<div id="confidential-machine-learning-ml-model-protection">
+<section id="section-3.2">
+        <h3 id="name-confidential-machine-learni">
+<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-confidential-machine-learni" class="section-name selfRef">Confidential Machine Learning (ML) Model Protection</a>
+        </h3>
+<p id="section-3.2-1">A device manufacturer wants to protect its intellectual property
+in terms of the ML model it developed and that runs in the devices that its
+customers purchased, and it wants to prevent attackers, potentially including
+the customer themselves, from seeing the details of the model.<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.2-2">This typically works by having some protected environment
+in the device attest to some manufacturer service.  If attestation succeeds.
+then the manufacturer service releases either the model, or a key to decrypt 
+a model the Attester already has in encrypted form, to the requester.<a href="#section-3.2-2" class="pilcrow">¶</a></p>
+<ul>
+<li id="section-3.2-3.1">Attester: A device desiring to run an ML model to do inferencing<a href="#section-3.2-3.1" class="pilcrow">¶</a>
+</li>
+<li id="section-3.2-3.2">Relying Party: A server or service holding ML models it desires to protect<a href="#section-3.2-3.2" class="pilcrow">¶</a>
+</li>
+</ul>
+</section>
+</div>
+<div id="confidential-data-retrieval">
+<section id="section-3.3">
+        <h3 id="name-confidential-data-retrieval">
+<a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-confidential-data-retrieval" class="section-name selfRef">Confidential Data Retrieval</a>
+        </h3>
+<p id="section-3.3-1">This is a generalization of the ML model use case above, where
+the data can be any highly confidential data, such as health data
+about customers, payroll data about employees, future business plans, etc.
+Attestation is desired to prevent leaking data to compromised devices.<a href="#section-3.3-1" class="pilcrow">¶</a></p>
+<ul>
+<li id="section-3.3-2.1">Attester: An entity desiring to retrieve confidential data<a href="#section-3.3-2.1" class="pilcrow">¶</a>
+</li>
+<li id="section-3.3-2.2">Relying Party: An entity that holds confidential data for retrieval by other entities<a href="#section-3.3-2.2" class="pilcrow">¶</a>
+</li>
+</ul>
+</section>
+</div>
+<div id="critical-infrastructure-control">
+<section id="section-3.4">
+        <h3 id="name-critical-infrastructure-con">
+<a href="#section-3.4" class="section-number selfRef">3.4. </a><a href="#name-critical-infrastructure-con" class="section-name selfRef">Critical Infrastructure Control</a>
+        </h3>
+<p id="section-3.4-1">In this use case, potentially dangerous physical equipment
+(e.g., power grid, traffic control, hazardous chemical processing, etc.)
+is connected to a network.  The organization managing such infrastructure
+needs to ensure that only authorized code and users can control such
+processes, and they are protected from malware or other adversaries.
+When a protocol operation can affect some critical
+system, the device attached to the critical equipment thus wants some
+assurance that the requester has not been compromised.  As such,
+attestation can be used to only accept commands from requesters
+that are within policy.<a href="#section-3.4-1" class="pilcrow">¶</a></p>
+<ul>
+<li id="section-3.4-2.1">Attester: A device or application wishing to control physical equipment.<a href="#section-3.4-2.1" class="pilcrow">¶</a>
+</li>
+<li id="section-3.4-2.2">Relying Party: A device or application connected to potentially dangerous
+physical equipment (hazardous chemical processing, traffic control,
+power grid, etc.<a href="#section-3.4-2.2" class="pilcrow">¶</a>
+</li>
+</ul>
+</section>
+</div>
+<div id="trusted-execution-environment-tee-provisioning">
+<section id="section-3.5">
+        <h3 id="name-trusted-execution-environme">
+<a href="#section-3.5" class="section-number selfRef">3.5. </a><a href="#name-trusted-execution-environme" class="section-name selfRef">Trusted Execution Environment (TEE) Provisioning</a>
+        </h3>
+<p id="section-3.5-1">A "Trusted Application Manager (TAM)" server is responsible
+for managing the applications running in the TEE of a client device.
+To do this, the TAM wants to verify the state of a TEE, or of applications
+in the TEE, of a client device.  The TEE attests to the TAM, which can 
+then decide whether the TEE is already in compliance with the TAM's latest
+policy, or if the TAM needs to uninstall, update, or install approved
+applications in the TEE to bring it back into compliance with the TAM's policy.<a href="#section-3.5-1" class="pilcrow">¶</a></p>
+<ul>
+<li id="section-3.5-2.1">Attester: A device with a trusted execution environment capable of
+  running trusted applications that can be updated.<a href="#section-3.5-2.1" class="pilcrow">¶</a>
+</li>
+<li id="section-3.5-2.2">Relying Party: A Trusted Application Manager.<a href="#section-3.5-2.2" class="pilcrow">¶</a>
+</li>
+</ul>
+</section>
+</div>
+<div id="hardware-watchdog">
+<section id="section-3.6">
+        <h3 id="name-hardware-watchdog">
+<a href="#section-3.6" class="section-number selfRef">3.6. </a><a href="#name-hardware-watchdog" class="section-name selfRef">Hardware Watchdog</a>
+        </h3>
+<p id="section-3.6-1">One significant problem is malware that holds a device
+hostage and does not allow it to reboot to prevent updates to be
+applied.  This is a significant problem, because it allows a fleet
+of devices to be held hostage for ransom.<a href="#section-3.6-1" class="pilcrow">¶</a></p>
+<p id="section-3.6-2">A hardware watchdog can be implemented by forcing a reboot unless
+attestation to a remote server succeeds within a periodic interval,
+and having the reboot do remediation by bringing a device into 
+compliance, including installation of patches as needed.<a href="#section-3.6-2" class="pilcrow">¶</a></p>
+<ul>
+<li id="section-3.6-3.1">Attester: The device that is desired to keep from being held hostage for
+  a long period of time.<a href="#section-3.6-3.1" class="pilcrow">¶</a>
+</li>
+<li id="section-3.6-3.2">Relying Party: A remote server that will securely grant the Attester
+  permission to continue operating (i.e., not reboot) for a period of time.<a href="#section-3.6-3.2" class="pilcrow">¶</a>
+</li>
+</ul>
+</section>
 </div>
 </section>
 </div>
